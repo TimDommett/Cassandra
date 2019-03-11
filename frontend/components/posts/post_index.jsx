@@ -21,7 +21,8 @@ class PostIndex extends React.Component {
               key={`post${post.id}`}
               post={post}
               likePost={this.props.likePost}
-              unLikePost={this.props.unLikePost}/>
+              unLikePost={this.props.unLikePost}
+              />
               )
             )
           }
