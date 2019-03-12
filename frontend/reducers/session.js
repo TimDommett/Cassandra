@@ -1,7 +1,7 @@
 import {
   RECIEVE_CURRENT_USER,
   LOGOUT_CURRENT_USER,
-} from '../actions/sessions';
+} from '../actions/session';
 
 // default state:
 
@@ -18,7 +18,8 @@ export default (state = _nullSession, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullSession;
       // if neither of these just return the previous state
-    default: state;
+    default:
+      return state;
 
   }
 };
