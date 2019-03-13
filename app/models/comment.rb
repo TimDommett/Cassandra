@@ -1,29 +1,28 @@
 # == Schema Information
 #
-# Table name: likes
+# Table name: steps
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  chirp_id   :integer          not null
+#  title      :string
+#  body       :string
+#  todo_id    :integer
+#  done       :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Comment < ApplicationRecord
-  # This is actually redundant since Rails 5+ will automatically validate
-  # belongs to relationships, and the foreign keys will be implicitly
-  # checked as a result
-  validates :user_id, :post_id, presence: true
+class Step < ApplicationRecord
+  # N.B. Remember, Rails 5 automatically validates the presence of
+  # belongs_to associations, so we can leave the validation of todo out
+  # here.
+  validates :comment, presence: true
+  # validates :done, inclusion: { in: [true, false] }
 
-  belongs_to :post,
-    primary_key: :id,
-    foreign_key: :post_id,
-    class_name: :Post
-    # optional: true
+  after_initialize { self.done = false if self.done.nil? }
 
-  belongs_to :user,
-    primary_key: :id,
-    foreign_key: :user_id,
-    class_name: :User
-    # optional: true
+  belongs_to :post
+
+  has_one :user,
+    through: :post,
+    source: :user
 end

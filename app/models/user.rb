@@ -35,6 +35,10 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Post
 
+  has_many :comments,
+    through: :posts,
+    source: :comments
+
   # has_many :comments,
   #   primary_key: :id,
   #   foreign_key: :user_id,

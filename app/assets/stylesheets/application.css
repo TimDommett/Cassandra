@@ -14,11 +14,29 @@
  *= require_self
  */
 
+.nav-bar {
+  float: left;
+  width: 100%;
+  background-color: darkgoldenrod;
+}
+
 .logo {
   float: left;
+  padding-left: 20px;
 }
 
 .login_out {
   float: right;
   padding-right: 20px;
+
+}
+
+.new-post-form {
+  width: 30%;
+  padding-left: 35%;
+}
+
+.new_post_btn {
+  width: 30%;
+  padding-left: 43%;
 }

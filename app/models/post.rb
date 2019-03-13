@@ -25,13 +25,13 @@ class Post < ApplicationRecord
     class_name: :Comment
 
 # check the next two
-  has_many :voters,
-    through: :votes,
-    source: :user
-
-  has_many :commentors,
-    through: :votes,
-    source: :user
+  # has_many :voters,
+  #   through: :votes,
+  #   source: :user
+  #
+  # has_many :commentors,
+  #   through: :votes,
+  #   source: :user
 
   belongs_to :user,
     primary_key: :id,
