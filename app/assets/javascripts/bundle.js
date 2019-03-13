@@ -584,26 +584,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var PostItem = function PostItem(_ref) {
   var post = _ref.post;
-  var likeButtonText = "You don't like this.";
-
-  var likeButtonAction = function likeButtonAction() {
-    return likePost(post.id);
-  };
-
-  if (post.liked_by_current_user) {
-    likeButtonText = "You like this";
-
-    likeButtonAction = function likeButtonAction() {
-      return unLikePost(post.id);
-    };
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, post.description), "// ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Likes: ", post.likes)), "// ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    onClick: likeButtonAction
-  }, likeButtonText));
+  // let likeButtonText = "You don't like this.";
+  // let likeButtonAction = () => likePost(post.id);
+  // if (post.liked_by_current_user) {
+  //   likeButtonText = "You like this";
+  //   likeButtonAction = () => unLikePost(post.id);
+  // }
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, post.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, post.description));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PostItem);
+/* harmony default export */ __webpack_exports__["default"] = (PostItem); // <p><strong>Likes: {post.likes}</strong></p>
+// <button onClick={likeButtonAction}>{likeButtonText}</button>
 
 /***/ }),
 
@@ -1275,6 +1266,7 @@ var createPost = function createPost(postForm) {
     method: 'POST',
     url: 'api/posts',
     data: postForm,
+    // user: current_user,
     contentType: false,
     processData: false
   });
