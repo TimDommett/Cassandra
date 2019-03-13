@@ -5,6 +5,7 @@ import PostIndexContainer from './posts/post_index_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import PostFormContainer from './posts_form/post_form_container';
+import CommentListContainer from './comments/comment_list_container';
 import Home from './home/home';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
@@ -17,5 +18,6 @@ export default () => (
     <Route path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path="/posts/new" component={PostFormContainer} />
+    <ProtectedRoute path="/posts/:post_id/comments" component={CommentListContainer} />
   </div>
 );

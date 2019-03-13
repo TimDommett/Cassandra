@@ -358,9 +358,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_signup_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session/signup_container */ "./frontend/components/session/signup_container.jsx");
 /* harmony import */ var _session_login_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session/login_container */ "./frontend/components/session/login_container.jsx");
 /* harmony import */ var _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./posts_form/post_form_container */ "./frontend/components/posts_form/post_form_container.js");
-/* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home */ "./frontend/components/home/home.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
+/* harmony import */ var _comments_comment_list_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./comments/comment_list_container */ "./frontend/components/comments/comment_list_container.jsx");
+/* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/home */ "./frontend/components/home/home.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
+
 
 
 
@@ -372,25 +374,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
     path: "/",
     component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
     exact: true,
     path: "/",
-    component: _home_home__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+    component: _home_home__WEBPACK_IMPORTED_MODULE_8__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
     path: "/posts",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_9__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
     path: "/login",
     component: _session_login_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_9__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
     path: "/posts/new",
     component: _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+    path: "/posts/:post_id/comments",
+    component: _comments_comment_list_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }));
 });
 
@@ -869,9 +874,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+ // import CommentListContainer from '../comments/comment_list_container'
+// Components
 
- // Components
-// import StepListContainer from '../step_list/step_list_container';
+
 
 var PostDetailView =
 /*#__PURE__*/
@@ -885,12 +891,10 @@ function (_React$Component) {
   }
 
   _createClass(PostDetailView, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.requestComments();
-    }
-  }, {
     key: "render",
+    // componentDidMount() {
+    //   this.props.requestComments();
+    // }
     value: function render() {
       var _this$props = this.props,
           post = _this$props.post,
@@ -1877,6 +1881,72 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
+/***/ "./frontend/reducers/comments.js":
+/*!***************************************!*\
+  !*** ./frontend/reducers/comments.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/comments */ "./frontend/actions/comments.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
+/* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_1__);
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var commentsReducer = function commentsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  var nextState;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_comments__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENTS"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
+      action.comments.forEach(function (comment) {
+        return nextState[comment.id] = comment;
+      });
+      return nextState;
+
+    case _actions_comments__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.comment.id, action.comment));
+
+    case _actions_comments__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
+      nextState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
+      delete nextState[action.comment.id];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (commentsReducer); // Sample State Shape
+// {
+//   1: {
+//     title: "walk to store",
+//     done: false
+//   },
+//   2: {
+//     title: "buy soap",
+//     done: false
+//   },
+//   3: {
+//     title: "walk to park",
+//     done: false
+//   },
+//   4: {
+//     title: "play with dog",
+//     done: false
+//   }
+// };
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities.js":
 /*!***************************************!*\
   !*** ./frontend/reducers/entities.js ***!
@@ -1944,12 +2014,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session */ "./frontend/reducers/session.js");
 /* harmony import */ var _entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./entities */ "./frontend/reducers/entities.js");
+/* harmony import */ var _comments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comments */ "./frontend/reducers/comments.js");
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   entities: _entities__WEBPACK_IMPORTED_MODULE_2__["default"],
-  session: _session__WEBPACK_IMPORTED_MODULE_1__["default"]
+  session: _session__WEBPACK_IMPORTED_MODULE_1__["default"],
+  comments: _comments__WEBPACK_IMPORTED_MODULE_3__["default"]
 }));
 
 /***/ }),
@@ -1970,7 +2043,8 @@ var allPosts = function allPosts(_ref) {
   return Object.keys(posts).map(function (id) {
     return posts[id];
   });
-};
+}; // comments is undefined is the problem
+
 var commentsByPostId = function commentsByPostId(_ref2, post_id) {
   var comments = _ref2.comments;
   var commentsByPostId = [];
