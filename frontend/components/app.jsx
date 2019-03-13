@@ -4,8 +4,10 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import PostIndexContainer from './posts/post_index_container';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
+import PostFormContainer from './posts_form/post_form_container';
 import Home from './home/home';
 import { Route } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
 export default () => (
   <div>
@@ -13,6 +15,7 @@ export default () => (
     <Route exact path="/" component={Home} />
     <Route path="/posts" component={PostIndexContainer} />
     <Route path="/signup" component={SignupContainer} />
-    <Route path="/login" component={LoginContainer} />
+    <AuthRoute path="/login" component={LoginContainer} />
+    <ProtectedRoute path="/posts/new" component={PostFormContainer} />
   </div>
 );

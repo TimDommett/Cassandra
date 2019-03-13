@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ post, likePost, unLikePost }) => {
+const PostItem = ({ post }) => {
   let likeButtonText = "You don't like this.";
   let likeButtonAction = () => likePost(post.id);
   if (post.liked_by_current_user) {
@@ -9,9 +9,12 @@ export default ({ post, likePost, unLikePost }) => {
   }
   return (
     <li>
-      <h3>{post.description}</h3>
-      <p><strong>Likes: {post.likes}</strong></p>
-      <button onClick={likeButtonAction}>{likeButtonText}</button>
+      <h3>{post.title}</h3>
+      <ul>{post.description}</ul>
+      // <p><strong>Likes: {post.likes}</strong></p>
+      // <button onClick={likeButtonAction}>{likeButtonText}</button>
     </li>
   );
 }
+
+export default PostItem;

@@ -9,8 +9,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts()),
-  likePost: id => dispatch(likePost(id)),
-  unLikePost: id => dispatch(unLikePost(id))
+  // likePost: id => dispatch(likePost(id)),
+  // unLikePost: id => dispatch(unLikePost(id)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);
