@@ -1,4 +1,5 @@
 class Api::PostsController < ApplicationController
+
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
@@ -29,6 +30,9 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
+    # @todo = current_user.todos.find(params[:id])
+    # @todo.destroy
+    # render json: @todo, include: :tags
     @post = selected_post
     if @post
       @post.destroy

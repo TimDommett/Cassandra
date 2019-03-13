@@ -18,6 +18,7 @@ export default ({ currentUser, logout }) => {
     <header className="nav-bar">
       <h1 className="logo">Cassandra</h1>
       <div>
+        <Link className="home_btn" to="/">Home</Link>
         <Link className="nav_btn" to="/posts">Recources</Link>
       </div>
       <div>

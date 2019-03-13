@@ -13,8 +13,7 @@ class PostForm extends React.Component {
       // photoUrl: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.navigateToSearch = this.navigateToSearch.bind(this);
-    // this.handleFile = this.handleFile.bind(this);
+    this.navigateToPosts = this.navigateToPosts.bind(this);
   }
 
   navigateToPosts() {
@@ -96,7 +95,7 @@ class PostForm extends React.Component {
           <div className="button-holder">
             <button
               className="new-post-button"
-              onClick={this.navigateToSearch}
+              onClick={this.navigateToPosts}
             >
               Cancel
             </button>

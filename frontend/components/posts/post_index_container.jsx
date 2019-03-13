@@ -1,6 +1,6 @@
 import React from 'react';
 import PostIndex from './post_index';
-import { fetchPosts, likePost, unLikePost } from '../../actions/posts';
+import { fetchPosts, likePost, unLikePost, updatePost, deletePost } from '../../actions/posts';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
@@ -9,6 +9,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchPosts: () => dispatch(fetchPosts()),
+  createPost: post => dispatch(createPost(post)),
+  updatePost: post => dispatch(updatePost(post)),
+  deletePost: () => dispatch(deletePost(post)),
   // likePost: id => dispatch(likePost(id)),
   // unLikePost: id => dispatch(unLikePost(id)),
 
