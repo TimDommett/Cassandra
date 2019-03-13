@@ -9,10 +9,13 @@ class PostDetailView extends React.Component {
   // }
 
   render() {
-    const { post, destroyPost } = this.props;
+    const { post, destroyPost, updatePost } = this.props;
     return(
       <div>
         <p className="post-detail">{post.description}</p>
+        <button className="update-btn" onClick={ updatePost }>
+          Update Post
+        </button>
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post
         </button>

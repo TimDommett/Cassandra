@@ -531,10 +531,14 @@ function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           post = _this$props.post,
-          destroyPost = _this$props.destroyPost;
+          destroyPost = _this$props.destroyPost,
+          updatePost = _this$props.updatePost;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-detail"
       }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "update-btn",
+        onClick: updatePost
+      }, "Update Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
       }, "Delete Post"));
@@ -559,7 +563,9 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _post_detail_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_detail_view */ "./frontend/components/posts/post_detail_view.jsx");
-/* harmony import */ var _actions_posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/posts */ "./frontend/actions/posts.js");
+/* harmony import */ var _update_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./update_form_container */ "./frontend/components/posts/update_form_container.jsx");
+/* harmony import */ var _actions_posts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/posts */ "./frontend/actions/posts.js");
+
 
  // Actions
 
@@ -570,7 +576,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
   return {
     // requestSteps: () => dispatch(requestSteps(todo.id)),
     destroyPost: function destroyPost() {
-      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(post));
+      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_3__["deletePost"])(post));
+    },
+    updatePost: function updatePost() {
+      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_3__["updatePost"])(post));
     }
   };
 };
@@ -836,6 +845,195 @@ function (_React$Component) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = (PostItem);
+
+/***/ }),
+
+/***/ "./frontend/components/posts/update_form.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/posts/update_form.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var PostForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(PostForm, _React$Component);
+
+  function PostForm(props) {
+    var _this;
+
+    _classCallCheck(this, PostForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props)); // this.coords = { lat: props.lat, lng: props.lng };
+
+    _this.state = {
+      title: '',
+      description: '' // photoFile: null,
+      // photoUrl: null
+
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.navigateToPosts = _this.navigateToPosts.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(PostForm, [{
+    key: "navigateToPosts",
+    value: function navigateToPosts() {
+      this.props.history.push('/posts');
+    }
+  }, {
+    key: "update",
+    value: function update(property) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, property, e.target.value));
+      };
+    } // handleFile(e) {
+    //   const file = e.currentTarget.files[0];
+    //   const fileReader = new FileReader();
+    //   fileReader.onloadend = () => {
+    //     this.setState({ photoFile: file, photoUrl: fileReader.result });
+    //   };
+    //   if (file) {
+    //     fileReader.readAsDataURL(file);
+    //   }
+    // }
+    // This will be where we create our form data to submit our photo
+
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var formData = new FormData();
+      formData.append('post[title]', this.state.title);
+      formData.append('post[description]', this.state.description); // add our coordinates
+      // formData.append('post[lat]', this.coords['lat']);
+      // formData.append('bench[lng]', this.coords['lng']);
+      // if (this.state.photoFile) {
+      //   formData.append('bench[photo]', this.state.photoFile);
+      // }
+      // This will fail because we do not have a AWS bucket set up for this project
+      // presently.
+
+      this.props.updatePost(formData);
+      this.navigateToPosts();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          title = _this$state.title,
+          description = _this$state.description; // const { lat, lng } = this.coords;
+      // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-post-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-post-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "new-post-title"
+      }, "Update Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "post-field"
+      }, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: title,
+        onChange: this.update('title'),
+        className: "post-field"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "post-field"
+      }, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: description,
+        onChange: this.update('description'),
+        className: "post-field"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "button-holder"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Create Post",
+        className: "new-post-button"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "button-holder"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "new-post-button",
+        onClick: this.navigateToPosts
+      }, "Cancel"))));
+    }
+  }]);
+
+  return PostForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(PostForm));
+
+/***/ }),
+
+/***/ "./frontend/components/posts/update_form_container.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/posts/update_form_container.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_posts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/posts */ "./frontend/actions/posts.js");
+/* harmony import */ var _update_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./update_form */ "./frontend/components/posts/update_form.jsx");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var location = _ref.location;
+  return {
+    lat: new URLSearchParams(location.search).get('lat'),
+    lng: new URLSearchParams(location.search).get('lng')
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updatePost: function updatePost(post) {
+      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_1__["updatePost"])(post));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_update_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

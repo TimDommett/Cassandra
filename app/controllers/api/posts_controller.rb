@@ -30,16 +30,16 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
-    # @todo = current_user.todos.find(params[:id])
-    # @todo.destroy
-    # render json: @todo, include: :tags
-    @post = selected_post
-    if @post
-      @post.destroy
-      render :show
-    else
-      render ['Could not find post']
-    end
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    # render json: @post
+    # @post = selected_post
+    # if @post
+    #   @post.destroy
+    #   render :show
+    # else
+    #   render ['Could not find post']
+    # end
   end
 
   private
