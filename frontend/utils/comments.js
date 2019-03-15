@@ -5,13 +5,18 @@ export const fetchComments = post_id => (
   })
 );
 
-export const createComment = (post_id, comment) => (
+export const createComment = commentForm => (
   $.ajax({
     method: 'POST',
-    url: `/api/posts/${post_id}/comments`,
-    data: { comment }
+    url: `/api/comments`,
+    data: commentForm,
+    // user: current_user,
+    contentType: false,
+    processData: false
   })
 );
+
+
 
 export const updateComment = comment => (
 $.ajax({

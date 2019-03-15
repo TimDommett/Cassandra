@@ -35,7 +35,7 @@
 
 .todo-list-item {
   background-color: azure;
-  padding: 50px;
+  padding: 10px;
   border-radius: 25px;
   width: 90%;
   margin: 10px;
@@ -70,12 +70,16 @@
   bottom: 20px;
 }
 
-
+/* Need to create spacer at bottom if new post is open */
 .new-post-form {
-  width: 30%;
+  width: 100%;
   /* margin-left: 35%; */
   border-radius: 10px;
   background-color: aliceblue;
+
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
 }
 
 .new-post-title {

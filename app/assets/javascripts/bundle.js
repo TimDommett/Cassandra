@@ -166,7 +166,7 @@ var destroyComment = function destroyComment(comment) {
 /*!***********************************!*\
   !*** ./frontend/actions/posts.js ***!
   \***********************************/
-/*! exports provided: RECEIVE_POSTS, RECEIVE_SINGLE_POST, REMOVE_POST, removePost, fetchPosts, newPost, updatePost, deletePost */
+/*! exports provided: RECEIVE_POSTS, RECEIVE_SINGLE_POST, REMOVE_POST, removePost, fetchPosts, votePost, unVotePost, newPost, updatePost, deletePost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -176,6 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_POST", function() { return REMOVE_POST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removePost", function() { return removePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "votePost", function() { return votePost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unVotePost", function() { return unVotePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newPost", function() { return newPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePost", function() { return updatePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
@@ -211,12 +213,21 @@ var fetchPosts = function fetchPosts() {
       return dispatch(receivePosts(posts));
     });
   };
-}; // export const likePost = id => dispatch => postLikeToPost(id)
-//   .then(post => dispatch(receiveSinglePost(post)));
-//
-// export const unLikePost = id => dispatch => deleteLikeFromPost(id)
-//   .then(post => dispatch(receiveSinglePost(post)));
-
+};
+var votePost = function votePost(id) {
+  return function (dispatch) {
+    return postVoteToPost(id).then(function (post) {
+      return dispatch(receiveSinglePost(post));
+    });
+  };
+};
+var unVotePost = function unVotePost(id) {
+  return function (dispatch) {
+    return deleteVoteFromPost(id).then(function (post) {
+      return dispatch(receiveSinglePost(post));
+    });
+  };
+};
 var newPost = function newPost(post) {
   return function (dispatch) {
     return Object(_utils_posts__WEBPACK_IMPORTED_MODULE_0__["createPost"])(post).then(function (post) {
@@ -442,6 +453,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -464,6 +476,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var CommentForm =
 /*#__PURE__*/
 function (_React$Component) {
@@ -476,8 +489,9 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentForm).call(this, props));
     _this.state = {
-      comment: "",
-      done: false
+      comment: "" // user_id: user_id,
+      // post_id: post_id,
+
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -496,8 +510,8 @@ function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var step = Object.assign({}, this.state);
-      this.props.createComment(this.props.post_id, step).then(this.setState({
+      var comment = Object.assign({}, this.state);
+      this.props.createComment(this.props.post_id, comment).then(this.setState({
         comment: ""
       }) // reset form
       );
@@ -512,7 +526,7 @@ function (_React$Component) {
         className: "input",
         ref: "comment",
         value: this.state.comment,
-        placeholder: "walk to store",
+        placeholder: "Comment Here...",
         onChange: this.update('comment'),
         required: true
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -524,7 +538,45 @@ function (_React$Component) {
   return CommentForm;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CommentForm);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(CommentForm));
+
+/***/ }),
+
+/***/ "./frontend/components/comments/comment_form_container.jsx":
+/*!*****************************************************************!*\
+  !*** ./frontend/components/comments/comment_form_container.jsx ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_comments__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/comments */ "./frontend/actions/comments.js");
+/* harmony import */ var _comment_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comment_form */ "./frontend/components/comments/comment_form.jsx");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var post_id = _ref.post_id;
+  return {
+    comments: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["commentsByPostId"])(state, post_id),
+    post_id: post_id
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    newComment: function newComment(comment) {
+      return dispatch(Object(_actions_comments__WEBPACK_IMPORTED_MODULE_1__["newComment"])(comment));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_comment_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -540,7 +592,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _comment_list_item_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment_list_item_container */ "./frontend/components/comments/comment_list_item_container.jsx");
-/* harmony import */ var _comment_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comment_form */ "./frontend/components/comments/comment_form.jsx");
+/* harmony import */ var _comment_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./comment_form_container */ "./frontend/components/comments/comment_form_container.jsx");
  // Components
 
 
@@ -558,7 +610,7 @@ var CommentList = function CommentList(_ref) {
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "comments-list"
-  }, commentItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, commentItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     post_id: post_id,
     createComment: createComment
   }));
@@ -879,6 +931,45 @@ var mapStateToProps = function mapStateToProps(state) {
 
 /***/ }),
 
+/***/ "./frontend/components/posts/like_item.jsx":
+/*!*************************************************!*\
+  !*** ./frontend/components/posts/like_item.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_posts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/posts */ "./frontend/actions/posts.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var post = _ref.post,
+      votePost = _ref.votePost,
+      unVotePost = _ref.unVotePost;
+  var voteButtonText = "You don't like this.";
+
+  var voteButtonAction = function voteButtonAction() {
+    return votePost(post.id);
+  };
+
+  if (post.voted_by_current_user) {
+    voteButtonText = "You like this";
+
+    voteButtonAction = function voteButtonAction() {
+      return unVotePost(post.id);
+    };
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: voteButtonAction
+  }, voteButtonText));
+});
+
+/***/ }),
+
 /***/ "./frontend/components/posts/post_detail_view.jsx":
 /*!********************************************************!*\
   !*** ./frontend/components/posts/post_detail_view.jsx ***!
@@ -935,6 +1026,25 @@ function (_React$Component) {
           post = _this$props.post,
           destroyPost = _this$props.destroyPost,
           updatePost = _this$props.updatePost;
+
+      var _ref = function _ref(post) {
+        var voteButtonText = "You don't like this.";
+
+        var voteButtonAction = function voteButtonAction() {
+          return votePost(post.id);
+        };
+
+        if (post.voted_by_current_user) {
+          voteButtonText = "You like this";
+
+          voteButtonAction = function voteButtonAction() {
+            return unVotePost(post.id);
+          };
+        }
+      },
+          votePost = _ref.votePost,
+          unVotePost = _ref.unVotePost;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fade-in"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1069,6 +1179,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var _this$props = this.props,
           posts = _this$props.posts,
           updatePost = _this$props.updatePost,
@@ -1081,9 +1193,9 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "post".concat(post.id),
           post: post,
+          votePost: _this.props.votePost,
+          unVotePost: _this.props.unVotePost,
           updatePost: updatePost // deletePost={deletePost}
-          // likePost={this.props.likePost}
-          // unLikePost={this.props.unLikePost}
 
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1152,9 +1264,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     deletePost: function deletePost() {
       return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_2__["deletePost"])(post));
-    } // likePost: id => dispatch(likePost(id)),
-    // unLikePost: id => dispatch(unLikePost(id)),
-
+    },
+    votePost: function votePost(id) {
+      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_2__["votePost"])(id));
+    },
+    unVotePost: function unVotePost(id) {
+      return dispatch(Object(_actions_posts__WEBPACK_IMPORTED_MODULE_2__["unVotePost"])(id));
+    }
   };
 };
 
@@ -1174,6 +1290,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _post_detail_view_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post_detail_view_container */ "./frontend/components/posts/post_detail_view_container.jsx");
+/* harmony import */ var _actions_posts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/posts */ "./frontend/actions/posts.js");
+/* harmony import */ var _like_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./like_item */ "./frontend/components/posts/like_item.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1193,7 +1311,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
- // import { deletePost } from '../../actions/posts';
+
+
+
 
 var PostItem =
 /*#__PURE__*/
@@ -1252,7 +1372,9 @@ function (_React$Component) {
         className: "todo-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.toggleDetail
-      }, title))), description);
+      }, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        post: post
+      }));
     }
   }]);
 
@@ -2235,13 +2357,14 @@ var fetchComments = function fetchComments(post_id) {
     url: "/api/posts/".concat(post_id, "/comments")
   });
 };
-var createComment = function createComment(post_id, comment) {
+var createComment = function createComment(commentForm) {
   return $.ajax({
     method: 'POST',
-    url: "/api/posts/".concat(post_id, "/comments"),
-    data: {
-      comment: comment
-    }
+    url: "/api/comments",
+    data: commentForm,
+    // user: current_user,
+    contentType: false,
+    processData: false
   });
 };
 var updateComment = function updateComment(comment) {
@@ -2266,7 +2389,7 @@ var destroyComment = function destroyComment(comment) {
 /*!*********************************!*\
   !*** ./frontend/utils/posts.js ***!
   \*********************************/
-/*! exports provided: getPosts, createPost, revisePost, destroyPost */
+/*! exports provided: getPosts, createPost, revisePost, destroyPost, postVoteToPost, deleteVoteFromPost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2275,6 +2398,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "revisePost", function() { return revisePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPost", function() { return destroyPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postVoteToPost", function() { return postVoteToPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteVoteFromPost", function() { return deleteVoteFromPost; });
 var getPosts = function getPosts() {
   return $.ajax({
     url: '/api/posts'
@@ -2313,6 +2438,24 @@ var destroyPost = function destroyPost(post) {
   return $.ajax({
     method: 'DELETE',
     url: "api/posts/".concat(post.id)
+  });
+};
+var postVoteToPost = function postVoteToPost(id) {
+  return $.ajax({
+    url: '/api/votes',
+    method: 'POST',
+    data: {
+      id: id
+    }
+  });
+};
+var deleteVoteFromPost = function deleteVoteFromPost(id) {
+  return $.ajax({
+    url: '/api/votes',
+    method: 'DELETE',
+    data: {
+      id: id
+    }
   });
 };
 

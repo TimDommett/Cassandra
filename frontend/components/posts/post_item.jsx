@@ -1,7 +1,8 @@
 import React from 'react';
 import PostDetailViewContainer from './post_detail_view_container';
 
-// import { deletePost } from '../../actions/posts';
+import { votePost, unVotePost } from '../../actions/posts';
+import LikeItem from './like_item';
 
 
 class PostItem extends React.Component {
@@ -12,7 +13,10 @@ class PostItem extends React.Component {
     // this.handleDelete = this.handleDelete.bind(this)
     // this.deletePost = this.deletePost.bind(this)
     // this.toggleTodo = this.toggleTodo.bind(this);
-  }
+
+
+
+}
 
   toggleDetail(e) {
     e.preventDefault();
@@ -31,6 +35,7 @@ class PostItem extends React.Component {
   //    this.props.updateTodo(toggledTodo);
   // }
 
+
   render() {
     const { post , updatePost } = this.props;
     const { title } = post;
@@ -45,7 +50,10 @@ class PostItem extends React.Component {
           <h3><a onClick={this.toggleDetail}>{title}</a></h3>
         </div>
         {description}
+        <LikeItem post={post} />
+
       </li>
+
     );
   }
 }

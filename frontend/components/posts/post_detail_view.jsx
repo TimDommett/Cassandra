@@ -9,8 +9,18 @@ class PostDetailView extends React.Component {
   //   this.props.requestComments();
   // }
 
+
   render() {
     const { post, destroyPost, updatePost } = this.props;
+    const { votePost, unVotePost } = post => {
+      let voteButtonText = "You don't like this.";
+      let voteButtonAction = () => votePost(post.id);
+      if (post.voted_by_current_user) {
+        voteButtonText = "You like this";
+        voteButtonAction = () => unVotePost(post.id);
+      }
+
+    };
     return(
       <div className="fade-in">
         <p className="post-detail">{post.description}</p>
@@ -20,6 +30,7 @@ class PostDetailView extends React.Component {
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post
         </button>
+
         <CommentListContainer post_id={post.id} />
       </div>
     );

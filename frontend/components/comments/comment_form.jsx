@@ -1,24 +1,30 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+
 
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       comment: "",
-      done: false,
+      // user_id: user_id,
+      // post_id: post_id,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   update(property) {
-    return e => this.setState({[property]: e.target.value});
+    return e => this.setState({
+      [property]: e.target.value
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const step = Object.assign({}, this.state);
-    this.props.createComment(this.props.post_id, step).then(
+    const comment = Object.assign({}, this.state);
+    this.props.createComment(this.props.post_id, comment).then(
       this.setState({
         comment: "",
       }) // reset form
@@ -29,18 +35,20 @@ class CommentForm extends React.Component {
     return (
       <form className="comment-form" onSubmit={ this.handleSubmit }>
         <label>Comment:
+
           <input
             className="input"
             ref="comment"
             value={ this.state.comment }
-            placeholder="walk to store"
+            placeholder="Comment Here..."
             onChange={ this.update('comment') }
             required />
         </label>
         <button className="create-button">Post Comment!</button>
+
       </form>
     );
   }
 }
 
-export default CommentForm;
+export default withRouter(CommentForm);

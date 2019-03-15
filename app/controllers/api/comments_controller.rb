@@ -1,13 +1,18 @@
 class Api::CommentsController < ApplicationController
   # start here then to the other part, try make like posts because that works
   def create
-    comment = Comment.new(comment_params)
-
+    @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
+    @comment.post_id = selected_post.id
     if comment.save
-      render json: comment
+      render :show
     else
       render json: comment.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @comment = selected_comment
   end
 
   def index
@@ -31,6 +36,11 @@ class Api::CommentsController < ApplicationController
   end
 
   private
+
+  def selected_comment
+    Comment.find_by(params[:id])
+  end
+
   def comment_params
     params.require(:comment).permit(:comment, :post_id, :user_id)
   end

@@ -24,11 +24,11 @@ export const removePost = post => ({
 export const fetchPosts = () => dispatch => getPosts()
   .then(posts => dispatch(receivePosts(posts)));
 
-// export const likePost = id => dispatch => postLikeToPost(id)
-//   .then(post => dispatch(receiveSinglePost(post)));
-//
-// export const unLikePost = id => dispatch => deleteLikeFromPost(id)
-//   .then(post => dispatch(receiveSinglePost(post)));
+export const votePost = id => dispatch => postVoteToPost(id)
+  .then(post => dispatch(receiveSinglePost(post)));
+
+export const unVotePost = id => dispatch => deleteVoteFromPost(id)
+  .then(post => dispatch(receiveSinglePost(post)));
 
 
 export const newPost = post => dispatch => createPost(post)

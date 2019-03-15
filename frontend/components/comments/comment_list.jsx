@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
 import CommentListItemContainer from './comment_list_item_container';
-import CommentForm from './comment_form';
+import CommentForm from './comment_form_container';
 
 const CommentList = ({ comments, post_id, createComment }) => {
   const commentItems = comments.map(comment => (
