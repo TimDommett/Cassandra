@@ -28,6 +28,8 @@ class Signup extends React.Component {
       <div className="session-form">
         <h2>Sign Up!</h2>
         <form>
+          <div className="navbar-spacer">
+          </div>
           <label>Username:
             <input
             type="text"

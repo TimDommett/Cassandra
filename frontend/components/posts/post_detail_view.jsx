@@ -12,7 +12,7 @@ class PostDetailView extends React.Component {
   render() {
     const { post, destroyPost, updatePost } = this.props;
     return(
-      <div>
+      <div className="fade-in">
         <p className="post-detail">{post.description}</p>
         <button className="update-btn" onClick={ updatePost }>
           Update Post

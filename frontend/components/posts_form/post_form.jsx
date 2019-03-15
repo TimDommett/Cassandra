@@ -8,6 +8,7 @@ class PostForm extends React.Component {
     this.state = {
       title: '',
       description: '',
+      editable: false,
 
       // photoFile: null,
       // photoUrl: null
@@ -72,14 +73,14 @@ class PostForm extends React.Component {
             type="text"
             value={title}
             onChange={this.update('title')}
-            className="post-field"
+            className="post-field-title"
           />
             <label className="post-field">Description</label>
             <input
-              type="text"
+              type="textarea"
               value={description}
               onChange={this.update('description')}
-              className="post-field"
+              className="post-field-description"
             />
 
 

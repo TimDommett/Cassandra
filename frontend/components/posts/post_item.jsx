@@ -9,6 +9,8 @@ class PostItem extends React.Component {
     super(props);
     this.state = { description: false };
     this.toggleDetail = this.toggleDetail.bind(this);
+    // this.handleDelete = this.handleDelete.bind(this)
+    // this.deletePost = this.deletePost.bind(this)
     // this.toggleTodo = this.toggleTodo.bind(this);
   }
 
@@ -18,6 +20,8 @@ class PostItem extends React.Component {
       description: !this.state.description
     });
   }
+
+
 
   // toggleTodo(e) {
   //   e.preventDefault();

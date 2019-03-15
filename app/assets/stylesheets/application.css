@@ -14,11 +14,39 @@
  *= require_self
  */
 
+
+ body {
+   background-color: #5BBEEC;
+ }
+
 .nav-bar {
   float: left;
   width: 100%;
-  background-color: darkgoldenrod;
+  background-color: #5BBEEC;
+  /* background-color: darkgoldenrod; */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
 }
+
+.navbar-spacer {
+  height: 80px;
+}
+
+.todo-list-item {
+  background-color: azure;
+  padding: 50px;
+  border-radius: 25px;
+  width: 90%;
+  margin: 10px;
+}
+
+/* .post-detail {
+  background-color: azure;
+  padding: 10px;
+  border-radius: 25px;
+  width: 90%;
+} */
 
 .logo {
   float: left;
@@ -31,12 +59,81 @@
 
 }
 
-.new-post-form {
-  width: 30%;
-  padding-left: 35%;
+.new_post_btn {
+  /* margin-left: 43%; */
+  border-radius: 25px;
+  background-color: white;
+  height: 10px;
+  padding: 5px;
+  position: fixed;
+  overflow: hidden;
+  bottom: 20px;
 }
 
-.new_post_btn {
+
+.new-post-form {
   width: 30%;
-  padding-left: 43%;
+  /* margin-left: 35%; */
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+.new-post-title {
+  padding: 5px;
+  display: flex;
+  align-self: center;
+}
+
+.create-new-post {
+  display: flex;
+  justify-content: center;
+}
+
+.new-post-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post-field-title {
+  width: 90%;
+  margin: 10px;
+}
+
+.post-field-description {
+  width: 90%;
+  height: 300px;
+  /* padding: 5px; */
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.post-field {
+  padding: 5px;
+}
+
+.button-holder {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+
+
+/* Move into transitions.css */
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

@@ -7,6 +7,7 @@ import LoginContainer from './session/login_container';
 import PostFormContainer from './posts_form/post_form_container';
 import CommentListContainer from './comments/comment_list_container';
 import Home from './home/home';
+import About from './about/about';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
@@ -15,6 +16,7 @@ export default () => (
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
     <Route path="/posts" component={PostIndexContainer} />
+    <Route path="/about" component={About} />
     <Route path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path="/posts/new" component={PostFormContainer} />

@@ -13,11 +13,34 @@ class PostIndex extends React.Component {
     this.props.fetchPosts();
   }
 
+  // handleDelete(id){
+  //   fetch(`/posts/${id}`,
+  //   {
+  //     method: 'DELETE',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then((response) => {
+  //       this.deleteFruit(id)
+  //     })
+  // }
+  //
+  // deletePost(id){
+  //   newPosts = this.state.posts.filter((post) => post.id !== id)
+  //   this.setState({
+  //     posts: newPosts
+  //   })
+  // }
+
   render() {
     const { posts, updatePost, deletePost } = this.props;
     return (
       <div>
-        <ul>
+        <div className="navbar-spacer">
+        </div>
+        <h2>Description of what the page is about and brief thing giving suggestion of what they should do.
+        </h2>
+        <ul className="fade-in">
           {
             posts.map(post => (
               <PostItem

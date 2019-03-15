@@ -106,6 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyComment", function() { return destroyComment; });
 /* harmony import */ var _utils_comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/comments */ "./frontend/utils/comments.js");
+ // try implement the same way as posts because know that works and more consistent
 
 var RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 var RECEIVE_COMMENT = "RECEIVE_COMMENT";
@@ -341,6 +342,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/components/about/about.jsx":
+/*!*********************************************!*\
+  !*** ./frontend/components/about/about.jsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "about"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-spacer"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Created as a testament to the power of free education."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "about-paragraph"
+  }, " This parabraph - blah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blahblah blah."));
+});
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -360,8 +385,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./posts_form/post_form_container */ "./frontend/components/posts_form/post_form_container.js");
 /* harmony import */ var _comments_comment_list_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./comments/comment_list_container */ "./frontend/components/comments/comment_list_container.jsx");
 /* harmony import */ var _home_home__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./home/home */ "./frontend/components/home/home.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
+/* harmony import */ var _about_about__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./about/about */ "./frontend/components/about/about.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _utils_route_util__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/route_util */ "./frontend/utils/route_util.jsx");
+
 
 
 
@@ -374,26 +401,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
     path: "/",
     component: _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
     exact: true,
     path: "/",
     component: _home_home__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
     path: "/posts",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+    path: "/about",
+    component: _about_about__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
     path: "/signup",
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["AuthRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["AuthRoute"], {
     path: "/login",
     component: _session_login_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/posts/new",
     component: _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_10__["ProtectedRoute"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/posts/:post_id/comments",
     component: _comments_comment_list_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }));
@@ -701,6 +731,8 @@ __webpack_require__.r(__webpack_exports__);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "home"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-spacer"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "hero-img-frame"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "hero-img",
@@ -750,7 +782,10 @@ __webpack_require__.r(__webpack_exports__);
   }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav_btn",
     to: "/posts"
-  }, "Recources")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
+  }, "Recources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "nav_btn",
+    to: "/about"
+  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
 });
 
 /***/ }),
@@ -900,7 +935,9 @@ function (_React$Component) {
           post = _this$props.post,
           destroyPost = _this$props.destroyPost,
           updatePost = _this$props.updatePost;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fade-in"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-detail"
       }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "update-btn",
@@ -1010,7 +1047,25 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchPosts();
-    }
+    } // handleDelete(id){
+    //   fetch(`/posts/${id}`,
+    //   {
+    //     method: 'DELETE',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   }).then((response) => {
+    //       this.deleteFruit(id)
+    //     })
+    // }
+    //
+    // deletePost(id){
+    //   newPosts = this.state.posts.filter((post) => post.id !== id)
+    //   this.setState({
+    //     posts: newPosts
+    //   })
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1018,7 +1073,11 @@ function (_React$Component) {
           posts = _this$props.posts,
           updatePost = _this$props.updatePost,
           deletePost = _this$props.deletePost;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, posts.map(function (post) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-spacer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "fade-in"
+      }, posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "post".concat(post.id),
           post: post,
@@ -1150,7 +1209,9 @@ function (_React$Component) {
     _this.state = {
       description: false
     };
-    _this.toggleDetail = _this.toggleDetail.bind(_assertThisInitialized(_this)); // this.toggleTodo = this.toggleTodo.bind(this);
+    _this.toggleDetail = _this.toggleDetail.bind(_assertThisInitialized(_this)); // this.handleDelete = this.handleDelete.bind(this)
+    // this.deletePost = this.deletePost.bind(this)
+    // this.toggleTodo = this.toggleTodo.bind(this);
 
     return _this;
   }
@@ -1454,7 +1515,8 @@ function (_React$Component) {
 
     _this.state = {
       title: '',
-      description: '' // photoFile: null,
+      description: '',
+      editable: false // photoFile: null,
       // photoUrl: null
 
     };
@@ -1528,14 +1590,14 @@ function (_React$Component) {
         type: "text",
         value: title,
         onChange: this.update('title'),
-        className: "post-field"
+        className: "post-field-title"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "post-field"
       }, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "textarea",
         value: description,
         onChange: this.update('description'),
-        className: "post-field"
+        className: "post-field-description"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1698,7 +1760,9 @@ function (_React$Component) {
       // console.log(this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log In!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-spacer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Log In!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username')
@@ -1827,7 +1891,9 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Sign Up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-spacer"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username')

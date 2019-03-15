@@ -1,4 +1,5 @@
 import * as CommentAPIUtil from '../utils/comments';
+// try implement the same way as posts because know that works and more consistent
 
 export const RECEIVE_COMMENTS = "RECEIVE_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";

@@ -20,6 +20,7 @@ export default ({ currentUser, logout }) => {
       <div>
         <Link className="home_btn" to="/">Home</Link>
         <Link className="nav_btn" to="/posts">Recources</Link>
+        <Link className="nav_btn" to="/about">About</Link>
       </div>
       <div>
         {display}

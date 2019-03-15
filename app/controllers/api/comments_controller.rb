@@ -1,4 +1,5 @@
 class Api::CommentsController < ApplicationController
+  # start here then to the other part, try make like posts because that works
   def create
     comment = Comment.new(comment_params)
 

@@ -27,6 +27,8 @@ class Login extends React.Component {
     // console.log(this.props);
     return (
       <div className="session-form">
+        <div className="navbar-spacer">
+        </div>
         <h2>Log In!</h2>
         <form>
           <label>Username:
