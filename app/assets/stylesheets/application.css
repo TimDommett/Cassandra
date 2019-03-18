@@ -26,6 +26,8 @@
   /* small shadow under navbar, look at youtube */
   /* height should be 40-50px */
   float: left;
+  left: 0;
+  z-index: 10000;
   width: 100%;
   background-color: #F1F8FE;
   background-color: #515659;

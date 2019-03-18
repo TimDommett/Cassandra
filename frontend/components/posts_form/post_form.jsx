@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import Tags from '../posts/tags';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class PostForm extends React.Component {
   update(property) {
     return e => this.setState({
       [property]: e.target.value
-    });
+    }); 
   }
 
   // handleFile(e) {
@@ -99,6 +100,7 @@ class PostForm extends React.Component {
                 className="new-post-button"
               />
             </div>
+            <Tags/>
           </form>
           <div className="button-holder">
             <button
