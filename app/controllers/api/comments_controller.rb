@@ -41,6 +41,10 @@ class Api::CommentsController < ApplicationController
     Comment.find_by(params[:id])
   end
 
+  def selected_post
+    Post.find_by(params[:id])
+  end
+
   def comment_params
     params.require(:comment).permit(:comment, :post_id, :user_id)
   end

@@ -24,6 +24,8 @@ class PostDetailView extends React.Component {
     return(
       <div className="fade-in">
         <p className="post-detail">{post.description}</p>
+        <label className="">Link:</label>
+        <p className="post-link">{post.link}</p>
         <button className="update-btn" onClick={ updatePost }>
           Update Post
         </button>

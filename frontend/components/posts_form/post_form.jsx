@@ -8,7 +8,7 @@ class PostForm extends React.Component {
     this.state = {
       title: '',
       description: '',
-      editable: false,
+      link: '',
 
       // photoFile: null,
       // photoUrl: null
@@ -44,6 +44,7 @@ class PostForm extends React.Component {
     const formData = new FormData();
     formData.append('post[title]', this.state.title);
     formData.append('post[description]', this.state.description);
+    formData.append('post[link]', this.state.link);
     // add our coordinates
     // formData.append('post[lat]', this.coords['lat']);
     // formData.append('bench[lng]', this.coords['lng']);
@@ -58,7 +59,7 @@ class PostForm extends React.Component {
   }
 
   render() {
-    const { title, description } = this.state;
+    const { title, description, link } = this.state;
     // const { lat, lng } = this.coords;
     // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
 
@@ -82,6 +83,13 @@ class PostForm extends React.Component {
               onChange={this.update('description')}
               className="post-field-description"
             />
+            <label className="post-field">Link</label>
+            <input
+              type="text"
+              value={link}
+              onChange={this.update('link')}
+              className="post-field-link"
+            />
 
 
             <div className="button-holder">
@@ -92,7 +100,6 @@ class PostForm extends React.Component {
               />
             </div>
           </form>
-
           <div className="button-holder">
             <button
               className="new-post-button"

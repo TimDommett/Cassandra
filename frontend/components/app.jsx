@@ -20,6 +20,7 @@ export default () => (
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path="/posts/new" component={PostFormContainer} />
-    <ProtectedRoute path="/posts/:post_id/comments" component={CommentListContainer} />
   </div>
 );
+
+// <Route path="/posts/:post_id/comments" component={CommentListContainer} />

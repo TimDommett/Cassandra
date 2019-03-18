@@ -443,11 +443,8 @@ __webpack_require__.r(__webpack_exports__);
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/posts/new",
     component: _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
-    path: "/posts/:post_id/comments",
-    component: _comments_comment_list_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }));
-});
+}); // <Route path="/posts/:post_id/comments" component={CommentListContainer} />
 
 /***/ }),
 
@@ -1059,7 +1056,11 @@ function (_React$Component) {
         className: "fade-in"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-detail"
-      }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: ""
+      }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "post-link"
+      }, post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "update-btn",
         onClick: updatePost
       }, "Update Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1136,6 +1137,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1164,9 +1167,16 @@ function (_React$Component) {
   _inherits(PostIndex, _React$Component);
 
   function PostIndex(props) {
+    var _this;
+
     _classCallCheck(this, PostIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
+    _this.state = {
+      search: ""
+    }; // this.state = {search_param: ""}
+
+    return _this;
   }
 
   _createClass(PostIndex, [{
@@ -1175,25 +1185,43 @@ function (_React$Component) {
       this.props.fetchPosts();
     }
   }, {
+    key: "update",
+    value: function update(property) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, property, e.target.value));
+      };
+    } // Need to create dropdown so can change what you are filtering by
+
+  }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this3 = this;
 
       var _this$props = this.props,
           posts = _this$props.posts,
           updatePost = _this$props.updatePost,
           deletePost = _this$props.deletePost;
+      var search = this.state.search;
+      var filteredPosts = posts.filter(function (post) {
+        return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar-spacer"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        label: "Search Post",
+        icon: "search",
+        onChange: this.update("search")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "fade-in"
-      }, posts.map(function (post) {
+      }, filteredPosts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "post".concat(post.id),
           post: post,
           updatePost: updatePost,
-          votePost: _this.props.votePost,
-          unVotePost: _this.props.unVotePost,
+          votePost: _this3.props.votePost,
+          unVotePost: _this3.props.unVotePost,
           deletePost: deletePost
         });
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1638,7 +1666,7 @@ function (_React$Component) {
     _this.state = {
       title: '',
       description: '',
-      editable: false // photoFile: null,
+      link: '' // photoFile: null,
       // photoUrl: null
 
     };
@@ -1678,7 +1706,8 @@ function (_React$Component) {
       e.preventDefault();
       var formData = new FormData();
       formData.append('post[title]', this.state.title);
-      formData.append('post[description]', this.state.description); // add our coordinates
+      formData.append('post[description]', this.state.description);
+      formData.append('post[link]', this.state.link); // add our coordinates
       // formData.append('post[lat]', this.coords['lat']);
       // formData.append('bench[lng]', this.coords['lng']);
       // if (this.state.photoFile) {
@@ -1695,7 +1724,8 @@ function (_React$Component) {
     value: function render() {
       var _this$state = this.state,
           title = _this$state.title,
-          description = _this$state.description; // const { lat, lng } = this.coords;
+          description = _this$state.description,
+          link = _this$state.link; // const { lat, lng } = this.coords;
       // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1720,6 +1750,13 @@ function (_React$Component) {
         value: description,
         onChange: this.update('description'),
         className: "post-field-description"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "post-field"
+      }, "Link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: link,
+        onChange: this.update('link'),
+        className: "post-field-link"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
