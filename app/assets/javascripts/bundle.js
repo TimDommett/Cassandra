@@ -1811,7 +1811,8 @@ function (_React$Component) {
     _this.state = {
       title: '',
       description: '',
-      link: '' // photoFile: null,
+      link: '',
+      tags: [] // photoFile: null,
       // photoUrl: null
 
     };
@@ -1852,7 +1853,8 @@ function (_React$Component) {
       var formData = new FormData();
       formData.append('post[title]', this.state.title);
       formData.append('post[description]', this.state.description);
-      formData.append('post[link]', this.state.link); // add our coordinates
+      formData.append('post[link]', this.state.link);
+      formData.append('post[tags]', this.state.tags); // add our coordinates
       // formData.append('post[lat]', this.coords['lat']);
       // formData.append('bench[lng]', this.coords['lng']);
       // if (this.state.photoFile) {
@@ -1870,7 +1872,8 @@ function (_React$Component) {
       var _this$state = this.state,
           title = _this$state.title,
           description = _this$state.description,
-          link = _this$state.link; // const { lat, lng } = this.coords;
+          link = _this$state.link,
+          tags = _this$state.tags; // const { lat, lng } = this.coords;
       // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1908,7 +1911,9 @@ function (_React$Component) {
         type: "submit",
         value: "Create Post",
         className: "new-post-button"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "post-field"
+      }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "new-post-button",
