@@ -8,7 +8,7 @@ export const fetchComments = post_id => (
 export const createComment = commentForm => (
   $.ajax({
     method: 'POST',
-    url: `/api/comments`,
+    url: `/api/posts/${post_id}/comments`,
     data: commentForm,
     // user: current_user,
     contentType: false,

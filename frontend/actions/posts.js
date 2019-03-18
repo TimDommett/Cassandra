@@ -30,6 +30,16 @@ export const votePost = id => dispatch => postVoteToPost(id)
 export const unVotePost = id => dispatch => deleteVoteFromPost(id)
   .then(post => dispatch(receiveSinglePost(post)));
 
+  // export const votePost = id => dispatch => {
+  //   return postVoteToPost(id)
+  //     .then(post => dispatch(receiveSinglePost(post)));
+  // }
+  //
+  // export const unVotePost = id => dispatch => {
+  //   return deleteVoteFromPost(id)
+  //     .then(post => dispatch(receiveSinglePost(post)));
+  // }
+
 
 export const newPost = post => dispatch => createPost(post)
   .then(post => dispatch(receiveSinglePost(post)));

@@ -1,6 +1,7 @@
 import React from 'react';
 import PostItem from './post_item';
 import PostForm from '../posts_form/post_form';
+import LikeItem from './like_item';
 import { Link } from 'react-router-dom';
 
 
@@ -12,25 +13,6 @@ class PostIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
-
-  // handleDelete(id){
-  //   fetch(`/posts/${id}`,
-  //   {
-  //     method: 'DELETE',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }).then((response) => {
-  //       this.deleteFruit(id)
-  //     })
-  // }
-  //
-  // deletePost(id){
-  //   newPosts = this.state.posts.filter((post) => post.id !== id)
-  //   this.setState({
-  //     posts: newPosts
-  //   })
-  // }
 
   render() {
     const { posts, updatePost, deletePost } = this.props;
@@ -46,18 +28,18 @@ class PostIndex extends React.Component {
               <PostItem
               key={`post${post.id}`}
               post={post}
-              // votePost={this.props.votePost}
-              // unVotePost={this.props.unVotePost}
               updatePost={updatePost}
-              // deletePost={deletePost}
+              votePost={this.props.votePost}
+              unVotePost={this.props.unVotePost}
+              deletePost={deletePost}
               />
               )
             )
           }
         </ul>
-
-        <div className="create-new-post">
-          <Link className="new_post_btn" to="/posts/new">Create New Post</Link>
+        
+        <div className="create-new-post ">
+          <Link className="new_post_btn border-inset" to="/posts/new">Create New Post</Link>
         </div>
       </div>
 

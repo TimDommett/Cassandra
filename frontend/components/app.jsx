@@ -17,7 +17,7 @@ export default () => (
     <Route exact path="/" component={Home} />
     <Route path="/posts" component={PostIndexContainer} />
     <Route path="/about" component={About} />
-    <Route path="/signup" component={SignupContainer} />
+    <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path="/posts/new" component={PostFormContainer} />
     <ProtectedRoute path="/posts/:post_id/comments" component={CommentListContainer} />

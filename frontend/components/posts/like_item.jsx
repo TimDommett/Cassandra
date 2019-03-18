@@ -1,5 +1,5 @@
 import React from 'react';
-import { votePost, unVotePost } from '../../actions/posts';
+// import { votePost, unVotePost } from '../../actions/posts';
 
 export default ({ post, votePost, unVotePost }) => {
   let voteButtonText = "You don't like this.";

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 
 
 class CommentForm extends React.Component {
@@ -7,6 +7,7 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       comment: "",
+      post_id: this.props.post_id,
       // user_id: user_id,
       // post_id: post_id,
     };
@@ -51,4 +52,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default withRouter(CommentForm);
+export default CommentForm;

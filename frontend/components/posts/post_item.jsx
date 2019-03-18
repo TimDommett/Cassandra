@@ -50,7 +50,11 @@ class PostItem extends React.Component {
           <h3><a onClick={this.toggleDetail}>{title}</a></h3>
         </div>
         {description}
-        <LikeItem post={post} />
+        <LikeItem
+        post={post}
+        votePost={this.props.votePost}
+        unVotePost={this.props.unVotePost}
+        />
 
       </li>
 

@@ -4,10 +4,10 @@ import PostDetailView from './post_detail_view';
 import UpdateForm from './update_form_container';
 // Actions
 import { deletePost, updatePost } from '../../actions/posts';
-// import { requestSteps } from '../../actions/step_actions';
+import { requestComments } from '../../actions/comments';
 
 const mapDispatchToProps = (dispatch, { post }) => ({
-  // requestSteps: () => dispatch(requestSteps(todo.id)),
+  requestComments: () => dispatch(requestComments(post.id)),
   destroyPost: () => dispatch(deletePost(post)),
   updatePost: () => dispatch(updatePost(post)),
 });

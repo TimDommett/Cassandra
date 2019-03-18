@@ -206,6 +206,7 @@
                 3px 3px #53a7ea;
         -webkit-transform: translateX(-3px);
         transform: translateX(-3px);
+        transition:all 0.3s ease;
 }
 
 
@@ -214,4 +215,11 @@
         -webkit-transform: scale(1.01);
         -ms-transform: scale(1.01);
         transform: scale(1.01);
+        transition:all 0.3s ease;
+}
+
+.border-inset:hover
+{
+        box-shadow: inset 0 0 0 3px #53a7ea;
+        transition:all 0.3s ease;
 }

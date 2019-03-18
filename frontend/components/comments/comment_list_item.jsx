@@ -18,7 +18,7 @@ class CommentListItem extends React.Component {
     return (
       <li className="comment-header">
         <div className="comment-info">
-          <p>{this.props.comment.description}</p>
+          <p>{this.props.comment.comment}</p>
         </div>
         <div className="comment-buttons">
           <button
