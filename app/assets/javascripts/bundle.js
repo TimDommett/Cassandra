@@ -216,14 +216,14 @@ var fetchPosts = function fetchPosts() {
 };
 var votePost = function votePost(id) {
   return function (dispatch) {
-    return postVoteToPost(id).then(function (post) {
+    return Object(_utils_posts__WEBPACK_IMPORTED_MODULE_0__["postVoteToPost"])(id).then(function (post) {
       return dispatch(receiveSinglePost(post));
     });
   };
 };
 var unVotePost = function unVotePost(id) {
   return function (dispatch) {
-    return deleteVoteFromPost(id).then(function (post) {
+    return Object(_utils_posts__WEBPACK_IMPORTED_MODULE_0__["deleteVoteFromPost"])(id).then(function (post) {
       return dispatch(receiveSinglePost(post));
     });
   };
@@ -788,7 +788,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "hero-img-frame"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "hero-img",
-    src: "http://www.ancientpages.com/wp-content/uploads/2016/08/cassandraprophetemyths19.jpg"
+    src: "https://gdurl.com/Wr9d"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Created as a testament to the power of free education."));
 });
 
@@ -831,7 +831,19 @@ __webpack_require__.r(__webpack_exports__);
   }, "Cassandra"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "home_btn",
     to: "/"
-  }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "dropdown"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    class: "dropbtn"
+  }, "Categories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "dropdown-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Software Development"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Economics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, "Mathemtics"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav_btn",
     to: "/posts"
   }, "Recources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1025,25 +1037,14 @@ function (_React$Component) {
       var _this$props = this.props,
           post = _this$props.post,
           destroyPost = _this$props.destroyPost,
-          updatePost = _this$props.updatePost;
-
-      var _ref = function _ref(post) {
-        var voteButtonText = "You don't like this.";
-
-        var voteButtonAction = function voteButtonAction() {
-          return votePost(post.id);
-        };
-
-        if (post.voted_by_current_user) {
-          voteButtonText = "You like this";
-
-          voteButtonAction = function voteButtonAction() {
-            return unVotePost(post.id);
-          };
-        }
-      },
-          votePost = _ref.votePost,
-          unVotePost = _ref.unVotePost;
+          updatePost = _this$props.updatePost; // const { votePost, unVotePost } = post => {
+      //   let voteButtonText = "You don't like this.";
+      //   let voteButtonAction = () => votePost(post.id);
+      //   if (post.voted_by_current_user) {
+      //     voteButtonText = "You like this";
+      //     voteButtonAction = () => unVotePost(post.id);
+      //   }
+      // };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fade-in"
@@ -1179,8 +1180,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var _this$props = this.props,
           posts = _this$props.posts,
           updatePost = _this$props.updatePost,
@@ -1192,9 +1191,9 @@ function (_React$Component) {
       }, posts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: "post".concat(post.id),
-          post: post,
-          votePost: _this.props.votePost,
-          unVotePost: _this.props.unVotePost,
+          post: post // votePost={this.props.votePost}
+          // unVotePost={this.props.unVotePost}
+          ,
           updatePost: updatePost // deletePost={deletePost}
 
         });
@@ -1367,7 +1366,7 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "todo-list-item"
+        className: "todo-list-item threed grow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "todo-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1875,6 +1874,7 @@ function (_React$Component) {
       this.props.login(this.state).then(function () {
         return _this3.props.history.push('/posts');
       });
+      sendToHome();
     }
   }, {
     key: "render",

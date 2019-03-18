@@ -1,4 +1,4 @@
-import { getPosts, postLikeToPost, deleteLikeFromPost, createPost, revisePost, destroyPost } from '../utils/posts';
+import { getPosts, postVoteToPost, deleteVoteFromPost, createPost, revisePost, destroyPost } from '../utils/posts';
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_SINGLE_POST = 'RECEIVE_SINGLE_POST';

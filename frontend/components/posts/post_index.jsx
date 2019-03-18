@@ -46,8 +46,8 @@ class PostIndex extends React.Component {
               <PostItem
               key={`post${post.id}`}
               post={post}
-              votePost={this.props.votePost}
-              unVotePost={this.props.unVotePost}
+              // votePost={this.props.votePost}
+              // unVotePost={this.props.unVotePost}
               updatePost={updatePost}
               // deletePost={deletePost}
               />
