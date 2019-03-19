@@ -38,6 +38,7 @@ class PostIndex extends React.Component {
     const filteredPosts = posts.filter( post => {
       return post.title.toLowerCase().indexOf( search.toLowerCase()) !== -1
     })
+    const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
     return (
       <div>
         <div className="navbar-spacer">
@@ -54,7 +55,7 @@ class PostIndex extends React.Component {
         />
         <ul className="fade-in">
           {
-            filteredPosts.map(post => (
+            sortedPosts.map(post => (
               <PostItem
               key={`post${post.id}`}
               post={post}

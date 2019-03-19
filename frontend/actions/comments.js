@@ -8,7 +8,7 @@ export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 // sync actions
 export const receiveComments = comments => ({
-  type: RECEIVE_Comments,
+  type: RECEIVE_COMMENTS,
   comments
 });
 

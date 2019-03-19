@@ -1,14 +1,14 @@
-export const fetchComments = post_id => (
+export const fetchComments = () =>
  $.ajax({
     method: 'GET',
-    url: `/api/posts/${post_id}/comments`
-  })
+    url: `/api/comments`
+  }
 );
 
 export const createComment = commentForm => (
   $.ajax({
     method: 'POST',
-    url: `/api/posts/${post_id}/comments`,
+    url: `/api/comments`,
     data: commentForm,
     // user: current_user,
     contentType: false,

@@ -62,6 +62,10 @@
   float: right;
 }
 
+.num-votes {
+  float: right;
+}
+
 /* .post-detail {
   background-color: azure;
   padding: 10px;

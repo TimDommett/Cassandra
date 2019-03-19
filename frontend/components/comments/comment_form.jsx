@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 
 
 class CommentForm extends React.Component {
@@ -22,14 +22,34 @@ class CommentForm extends React.Component {
     });
   }
 
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const comment = Object.assign({}, this.state);
+  //   this.props.createComment(this.props.post_id, comment).then(
+  //     this.setState({
+  //       comment: "",
+  //     }) // reset form
+  //   );
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
-    const comment = Object.assign({}, this.state);
-    this.props.createComment(this.props.post_id, comment).then(
-      this.setState({
-        comment: "",
-      }) // reset form
-    );
+    const commentForm = new FormData();
+    commentForm.append('comment[comment]', this.state.comment);
+    // commentForm.append('post[description]', this.state.description);
+    // commentForm.append('post[link]', this.state.link);
+    // commentForm.append('post[tags]', this.state.tags);
+  //   // add our coordinates
+  //   // formData.append('post[lat]', this.coords['lat']);
+  //   // formData.append('bench[lng]', this.coords['lng']);
+  //
+  //   // if (this.state.photoFile) {
+  //   //   formData.append('bench[photo]', this.state.photoFile);
+  //   // }
+  //   // This will fail because we do not have a AWS bucket set up for this project
+  //   // presently.
+    this.props.newComment(commentForm);
+    // this.navigateToPosts();
   }
 
   render() {
@@ -52,4 +72,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default CommentForm;
+export default withRouter(CommentForm);

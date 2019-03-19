@@ -1,13 +1,15 @@
 class Api::CommentsController < ApplicationController
   # start here then to the other part, try make like posts because that works
+
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.post_id = selected_post.id
-    if comment.save
+    if @comment.save
       render :show
     else
-      render json: comment.errors.full_messages, status: 422
+      render json: @comment.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -16,7 +18,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    comments = Post.find(params[:post_id]).comments
+    comments = selected_post.comments
     render json: comments
   end
 

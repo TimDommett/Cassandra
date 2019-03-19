@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :votes, only: [:create, :destroy]
     delete '/votes', to: 'votes#destroy'
     resources :comments
+    resources :tags
   end
   root to: 'root#root'
 end
