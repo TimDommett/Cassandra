@@ -17,10 +17,5 @@ class Tag < ApplicationRecord
   # here.
   validates :tag, presence: true
 
-  belongs_to :post
-
-  belongs_to :user,
-      primary_key: :id,
-      foreign_key: :user_id,
-      class_name: :User
+   has_and_belongs_to_many :posts
 end

@@ -56,6 +56,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def add_tag
+    @post = Post.find(params[:id])
+    @post.tags << Tag.find(params[:tag_id])
+end
+
   private
 
   def post_params
