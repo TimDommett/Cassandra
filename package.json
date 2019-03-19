@@ -12,6 +12,7 @@
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
+    "react-select": "^2.4.2",
     "react-tag-input": "^6.4.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",

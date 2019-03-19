@@ -3,16 +3,19 @@ import PostItem from './post_item';
 import PostForm from '../posts_form/post_form';
 import LikeItem from './like_item';
 import { Link } from 'react-router-dom';
+import Select from 'react-select';
 
+const options = [
+  { value: 'title', label: 'Title' },
+  { value: 'description', label: 'description' }
+];
 
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {search: ""};
+    this.state = {search: "", selectedOption: "title",};
     // this.state = {search_param: ""}
   }
-
-
 
 
   componentDidMount() {
@@ -31,7 +34,7 @@ class PostIndex extends React.Component {
 
   render() {
     const { posts, updatePost, deletePost } = this.props;
-    const {search} = this.state;
+    const {search, selectedOption} = this.state;
     const filteredPosts = posts.filter( post => {
       return post.title.toLowerCase().indexOf( search.toLowerCase()) !== -1
     })
@@ -44,6 +47,11 @@ class PostIndex extends React.Component {
         <div>
           <input label="Search Post" icon="search" onChange={this.update("search")}/>
         </div>
+        <Select
+        value={selectedOption}
+        onChange={this.update("selectedOption")}
+        options={options}
+        />
         <ul className="fade-in">
           {
             filteredPosts.map(post => (
