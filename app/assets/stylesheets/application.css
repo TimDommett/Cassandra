@@ -44,6 +44,12 @@
 /* do hover over each post item to make it increase inside slightly so you know which one youre about to click */
 
 
+.search-home {
+  width: 30%;
+margin-top: 13%;
+display: flex;
+margin-left: 10%;
+}
 
 .navbar-spacer {
   height: 80px;
