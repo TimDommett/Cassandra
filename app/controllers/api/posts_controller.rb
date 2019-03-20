@@ -32,6 +32,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy
+
     # render json: @post
     # @post = selected_post
     # if @post

@@ -527,7 +527,8 @@ function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var commentForm = new FormData();
-      commentForm.append('comment[comment]', this.state.comment); // commentForm.append('post[description]', this.state.description);
+      commentForm.append('comment[comment]', this.state.comment); // commentForm.append('comment[post_id]', this.state.post_id);
+      // commentForm.append('post[description]', this.state.description);
       // commentForm.append('post[link]', this.state.link);
       // commentForm.append('post[tags]', this.state.tags);
       //   // add our coordinates
@@ -814,7 +815,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "hero-img-frame"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "hero-img",
-    src: "https://gdurl.com/Wr9d"
+    src: "https://gdurl.com/LOdJ"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Created as a testament to the power of free education."));
 });
 
@@ -1218,6 +1219,11 @@ function (_React$Component) {
       this.props.fetchPosts();
     }
   }, {
+    key: "componentDidUnmount",
+    value: function componentDidUnmount() {
+      this.props.fetchPosts();
+    }
+  }, {
     key: "update",
     value: function update(property) {
       var _this2 = this;
@@ -1409,7 +1415,8 @@ function (_React$Component) {
     value: function toggleDetail(e) {
       e.preventDefault();
       this.setState({
-        description: !this.state.description
+        description: !this.state.description // post_id: this.state.id
+
       });
     } // toggleTodo(e) {
     //   e.preventDefault();

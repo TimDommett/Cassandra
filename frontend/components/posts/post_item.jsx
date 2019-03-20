@@ -21,7 +21,8 @@ class PostItem extends React.Component {
   toggleDetail(e) {
     e.preventDefault();
     this.setState({
-      description: !this.state.description
+      description: !this.state.description,
+      // post_id: this.state.id
     });
   }
 

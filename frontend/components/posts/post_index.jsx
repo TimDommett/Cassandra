@@ -21,6 +21,9 @@ class PostIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
+  componentDidUnmount() {
+    this.props.fetchPosts();
+  }
 
 
     update(property) {
