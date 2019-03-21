@@ -845,14 +845,17 @@ __webpack_require__.r(__webpack_exports__);
   var display = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "login_out"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, ", currentUser.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "logout-button",
     onClick: logout
   }, "Logout")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "login_out"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
+    className: "btn login_out_child",
     to: "/signup"
-  }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "btn",
+  }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "login_out_child"
+  }, " or "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "btn login_out_child",
     to: "/login"
   }, "Log In"));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
