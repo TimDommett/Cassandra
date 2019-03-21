@@ -811,7 +811,11 @@ __webpack_require__.r(__webpack_exports__);
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "hero-img",
     src: "https://gdurl.com/LOdJ"
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Come learn, share and make the world a better place by making access to information and education free for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "home-copy-title"
+  }, "Created as a testament to the power of free education."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "home-copy"
+  }, "Come learn, share and make the world a better place by making access to information and education free for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     label: "Search home",
     placeholder: "Search here for a subject you want to learn...",
     icon: "search",

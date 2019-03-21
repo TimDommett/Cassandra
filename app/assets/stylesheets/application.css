@@ -131,9 +131,27 @@
 
 .search-home {
   width: 30%;
-margin-top: 13%;
+margin-top: 10%;
 display: flex;
 margin-left: 10%;
+height: 25px;
+border: 2px solid #495A63;
+}
+
+.home-copy-title {
+
+    font-family: 'Muli', sans-serif;
+    margin-left: 50px;
+    margin-top: 50px;
+    /* text-align: justify; */
+}
+
+.home-copy {
+  font-family: 'Ovo', serif;
+  font-size: larger;
+  margin-left: 50px;
+  /* margin-top: 50px; */
+  text-align: justify;
 }
 
 .navbar-spacer {
@@ -147,6 +165,7 @@ margin-left: 10%;
   width: 90%;
   margin: 10px;
   margin-left: 40px;
+  font-family: 'Neuton', serif;
 }
 
 .hero-img {
