@@ -419,7 +419,7 @@ __webpack_require__.r(__webpack_exports__);
     exact: true,
     path: "/",
     component: _home_home__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_utils_route_util__WEBPACK_IMPORTED_MODULE_11__["ProtectedRoute"], {
     path: "/posts",
     component: _posts_post_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_10__["Route"], {
@@ -545,7 +545,7 @@ function (_React$Component) {
         className: "comment-form",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Comment:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input",
+        className: "comment-input",
         ref: "comment",
         value: this.state.comment,
         placeholder: "Comment Here...",
@@ -857,7 +857,10 @@ __webpack_require__.r(__webpack_exports__);
   }, "Log In"));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
     className: "nav-bar"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "spiral-logo",
+    src: "https://gdurl.com/EuYB"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "logo"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "home_btn nav-bar-child",
@@ -1010,6 +1013,7 @@ __webpack_require__.r(__webpack_exports__);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
     className: "num-votes"
   }, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "todo-list-item-child",
     onClick: voteButtonAction
   }, voteButtonText));
 });
@@ -1083,7 +1087,7 @@ function (_React$Component) {
       // };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "fade-in"
+        className: "fade-in todo-list-item-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-detail"
       }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -1262,7 +1266,11 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar-spacer"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "posts-header-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "posts-copy"
+      }, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
         placeholder: "Search for a post here...",
         icon: "search",
@@ -1285,7 +1293,7 @@ function (_React$Component) {
           unVotePost: _this3.props.unVotePost,
           deletePost: deletePost
         });
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-new-post "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         className: "new_post_btn border-inset",
@@ -1457,7 +1465,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "todo-list-item threed grow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "todo-header"
+        className: "todo-header todo-list-item-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.toggleDetail
       }, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2279,7 +2287,7 @@ function (_React$Component) {
         onChange: this.handleInput('password')
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit
-      }, "Submit")));
+      }, "Submit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Dont worry, we won't send you any emails without your consent!")));
     }
   }]);
 

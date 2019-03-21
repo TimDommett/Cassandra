@@ -52,6 +52,7 @@ class Signup extends React.Component {
             />
           </label>
           <button onClick={this.handleSubmit}>Submit</button>
+          <p>Dont worry, we won't send you any emails without your consent!</p>
         </form>
       </div>
     );

@@ -47,36 +47,36 @@ class PostIndex extends React.Component {
     const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
     return (
       <div>
-        <div className="navbar-spacer">
-        </div>
-        <h2>Description of what the page is about and brief thing giving suggestion of what they should do.
-        </h2>
-        <div>
-          <input label="Search Post" placeholder="Search for a post here..." icon="search" className="posts-search-field" onChange={this.update("search")}/>
-        </div>
-        <Select
-        value={selectedOption}
-        placeholder="Search by:"
-        className="post-search-by"
-        onChange={this.update("selectedOption")}
-        options={options}
-        />
-        <ul className="fade-in">
-          {
-            sortedPosts.map(post => (
-              <PostItem
-              key={`post${post.id}`}
-              post={post}
-              updatePost={updatePost}
-              votePost={this.props.votePost}
-              unVotePost={this.props.unVotePost}
-              deletePost={deletePost}
-              />
+        <div className="navbar-spacer"></div>
+        <div className="posts-header-container">
+          <h2 className="posts-copy">Description of what the page is about and brief thing giving suggestion of what they should do.
+          </h2>
+          <div>
+            <input label="Search Post" placeholder="Search for a post here..." icon="search" className="posts-search-field" onChange={this.update("search")}/>
+          </div>
+          <Select
+          value={selectedOption}
+          placeholder="Search by:"
+          className="post-search-by"
+          onChange={this.update("selectedOption")}
+          options={options}
+          />
+          <ul className="fade-in">
+            {
+              sortedPosts.map(post => (
+                <PostItem
+                key={`post${post.id}`}
+                post={post}
+                updatePost={updatePost}
+                votePost={this.props.votePost}
+                unVotePost={this.props.unVotePost}
+                deletePost={deletePost}
+                />
+                )
               )
-            )
-          }
-        </ul>
-
+            }
+          </ul>
+        </div>
         <div className="create-new-post ">
           <Link className="new_post_btn border-inset" to="/posts/new">Create New Post</Link>
         </div>

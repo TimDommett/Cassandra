@@ -63,7 +63,7 @@ class CommentForm extends React.Component {
         <label>Comment:
 
           <input
-            className="input"
+            className="comment-input"
             ref="comment"
             value={ this.state.comment }
             placeholder="Comment Here..."

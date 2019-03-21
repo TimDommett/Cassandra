@@ -22,7 +22,7 @@ class PostDetailView extends React.Component {
 
     // };
     return(
-      <div className="fade-in">
+      <div className="fade-in todo-list-item-child">
         <p className="post-detail">{post.description}</p>
         <label className="">Link:</label>
         <p className="post-link">{post.link}</p>

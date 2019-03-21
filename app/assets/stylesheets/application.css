@@ -42,9 +42,13 @@
   display: flex;
 }
 
+.spiral-logo {
+  width: 100px;
+}
+
 .logo {
   /* float: left; */
-  padding-left: 20%;
+  padding-left: 18%;
   align-self: center;
   order: 2;
   margin-left: auto;
@@ -71,6 +75,7 @@
 .nav-bar-child {
   color: inherit;
   padding-left: 20px;
+  font-size: larger;
 }
 
 .dropbtn {
@@ -164,8 +169,21 @@ border: 2px solid #495A63;
   border-radius: 10px;
   width: 90%;
   margin: 10px;
-  margin-left: 40px;
+  margin-left: 3%;
   font-family: 'Neuton', serif;
+}
+
+.todo-list-item-child {
+  margin-left: 2%;
+}
+
+.todo-header {
+  font-size: larger;
+}
+
+.comment-input {
+  width: 80%;
+  margin-left: 5px;
 }
 
 .hero-img {
@@ -175,6 +193,7 @@ border: 2px solid #495A63;
 
 .num-votes {
   float: right;
+  margin-right: 2%;
 }
 
 /* .post-detail {
@@ -190,6 +209,7 @@ border: 2px solid #495A63;
   height: 25px;
   top: 105px;
   position: fixed;
+  z-index: 500;
 }
 
 .post-search-by {
@@ -197,6 +217,12 @@ border: 2px solid #495A63;
   width: 25%;
   padding-right: 10%;
 
+}
+
+.posts-copy {
+  font-family: 'Ovo', serif;
+  margin-top: 65px;
+  text-align: center;
 }
 
 

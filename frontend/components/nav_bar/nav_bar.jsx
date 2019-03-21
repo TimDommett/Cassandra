@@ -16,6 +16,7 @@ export default ({ currentUser, logout }) => {
 
   return (
     <header className="nav-bar">
+      <img className="spiral-logo" src="https://gdurl.com/EuYB" />
       <h1 className="logo"><Link className="home_btn nav-bar-child" to="/">Cassandra</Link></h1>
       <div className="navbar-navigation">
 

@@ -15,12 +15,12 @@ export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
-    <Route path="/posts" component={PostIndexContainer} />
+    <ProtectedRoute path="/posts" component={PostIndexContainer} />
     <Route path="/about" component={About} />
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
     <ProtectedRoute path="/posts/new" component={PostFormContainer} />
-    
+
   </div>
 );
 
