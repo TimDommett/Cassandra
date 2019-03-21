@@ -16,10 +16,10 @@ export default ({ currentUser, logout }) => {
 
   return (
     <header className="nav-bar">
-      <h1 className="logo">Cassandra</h1>
-      <div>
-        <Link className="home_btn" to="/">Home</Link>
-        <div class="dropdown">
+      <h1 className="logo"><Link className="home_btn nav-bar-child" to="/">Cassandra</Link></h1>
+      <div className="navbar-navigation">
+
+        <div class="dropdown nav-bar-child">
           <button class="dropbtn">Categories</button>
           <div class="dropdown-content">
           <a href="#">Software Development</a>
@@ -27,12 +27,10 @@ export default ({ currentUser, logout }) => {
           <a href="#">Mathemtics</a>
         </div>
       </div>
-        <Link className="nav_btn" to="/posts">Recources</Link>
-        <Link className="nav_btn" to="/about">About</Link>
+        <Link className="nav_btn nav-bar-child" to="/posts">Recources</Link>
+        <Link className="nav_btn nav-bar-child" to="/about">About</Link>
       </div>
-      <div>
         {display}
-      </div>
     </header>
   );
 };

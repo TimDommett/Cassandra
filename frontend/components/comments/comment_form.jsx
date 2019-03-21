@@ -34,9 +34,13 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // const post_id = parseInt(this.props.match.params.post_id);
+    // const comment = Object.assign({}, this.state, {
+    //   post_id: post_id
+    // });
     const commentForm = new FormData();
     commentForm.append('comment[comment]', this.state.comment);
-    // commentForm.append('comment[post_id]', this.state.post_id);
+    commentForm.append('comment[post_id]', this.state.post_id);
     // commentForm.append('post[description]', this.state.description);
     // commentForm.append('post[link]', this.state.link);
     // commentForm.append('post[tags]', this.state.tags);

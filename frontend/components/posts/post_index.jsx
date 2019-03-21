@@ -13,7 +13,7 @@ const options = [
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {search: "", selectedOption: "title",};
+    this.state = {search: "", selectedOption: "title"};
     // this.state = {search_param: ""}
   }
 
@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
-  componentDidUnmount() {
+  componentWillUnmount() {
     this.props.fetchPosts();
   }
 
@@ -39,7 +39,10 @@ class PostIndex extends React.Component {
     const { posts, updatePost, deletePost } = this.props;
     const {search, selectedOption} = this.state;
     const filteredPosts = posts.filter( post => {
-      return post.title.toLowerCase().indexOf( search.toLowerCase()) !== -1
+      if (selectedOption == "title") {
+        return post.title.toLowerCase().indexOf( search.toLowerCase()) !== -1}
+      if (selectedOption == "description") {
+        return post.description.toLowerCase().indexOf( search.toLowerCase()) !== -1 }
     })
     const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
     return (
@@ -49,10 +52,12 @@ class PostIndex extends React.Component {
         <h2>Description of what the page is about and brief thing giving suggestion of what they should do.
         </h2>
         <div>
-          <input label="Search Post" icon="search" onChange={this.update("search")}/>
+          <input label="Search Post" placeholder="Search for a post here..." icon="search" className="posts-search-field" onChange={this.update("search")}/>
         </div>
         <Select
         value={selectedOption}
+        placeholder="Search by:"
+        className="post-search-by"
         onChange={this.update("selectedOption")}
         options={options}
         />

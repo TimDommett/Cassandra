@@ -7,7 +7,7 @@ export default () => (
       <img className="hero-img" src="https://gdurl.com/LOdJ" />
     </div>
     <h1>Come learn, share and make the world a better place by making access to information and education free for everyone.</h1>
-    <input label="Search home" icon="search" className="search-home">
+    <input label="Search home" placeholder="Search here for a subject you want to learn..." icon="search" className="search-home">
     </input>
   </div>
 )

@@ -38,7 +38,7 @@ class Post < ApplicationRecord
     foreign_key: :user_id,
     class_name: :User
 
-  has_and_belongs_to_many :tags
+  # has_and_belongs_to_many :tags
   # def chirp_too_long
   #   if body.length > 140
   #     errors[:body] << "too long"

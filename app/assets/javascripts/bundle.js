@@ -227,16 +227,7 @@ var unVotePost = function unVotePost(id) {
       return dispatch(receiveSinglePost(post));
     });
   };
-}; // export const votePost = id => dispatch => {
-//   return postVoteToPost(id)
-//     .then(post => dispatch(receiveSinglePost(post)));
-// }
-//
-// export const unVotePost = id => dispatch => {
-//   return deleteVoteFromPost(id)
-//     .then(post => dispatch(receiveSinglePost(post)));
-// }
-
+};
 var newPost = function newPost(post) {
   return function (dispatch) {
     return Object(_utils_posts__WEBPACK_IMPORTED_MODULE_0__["createPost"])(post).then(function (post) {
@@ -525,10 +516,14 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
+      e.preventDefault(); // const post_id = parseInt(this.props.match.params.post_id);
+      // const comment = Object.assign({}, this.state, {
+      //   post_id: post_id
+      // });
+
       var commentForm = new FormData();
-      commentForm.append('comment[comment]', this.state.comment); // commentForm.append('comment[post_id]', this.state.post_id);
-      // commentForm.append('post[description]', this.state.description);
+      commentForm.append('comment[comment]', this.state.comment);
+      commentForm.append('comment[post_id]', this.state.post_id); // commentForm.append('post[description]', this.state.description);
       // commentForm.append('post[link]', this.state.link);
       // commentForm.append('post[tags]', this.state.tags);
       //   // add our coordinates
@@ -818,6 +813,7 @@ __webpack_require__.r(__webpack_exports__);
     src: "https://gdurl.com/LOdJ"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Come learn, share and make the world a better place by making access to information and education free for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     label: "Search home",
+    placeholder: "Search here for a subject you want to learn...",
     icon: "search",
     className: "search-home"
   }));
@@ -859,11 +855,13 @@ __webpack_require__.r(__webpack_exports__);
     className: "nav-bar"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "logo"
-  }, "Cassandra"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "home_btn",
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "home_btn nav-bar-child",
     to: "/"
-  }, "Home"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "dropdown"
+  }, "Cassandra")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-navigation"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    class: "dropdown nav-bar-child"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     class: "dropbtn"
   }, "Categories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -875,12 +873,12 @@ __webpack_require__.r(__webpack_exports__);
   }, "Economics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, "Mathemtics"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nav_btn",
+    className: "nav_btn nav-bar-child",
     to: "/posts"
   }, "Recources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nav_btn",
+    className: "nav_btn nav-bar-child",
     to: "/about"
-  }, "About")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display));
+  }, "About")), display);
 });
 
 /***/ }),
@@ -941,8 +939,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var user = _ref.user;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    className: "nav-bar"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Cassandra"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Welcome ", user.username, "!"));
+    className: "welcome-bar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Welcome ", user.username, "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Cassandra"));
 });
 
 /***/ }),
@@ -1089,12 +1087,9 @@ function (_React$Component) {
       }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "post-link"
       }, post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "update-btn",
-        onClick: updatePost
-      }, "Update Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
-      }, "Delete Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Delete Post"), "// maybe because going from one container down like 3 roots to get to the aimed at component", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         post_id: post.id
       }));
     }
@@ -1223,8 +1218,8 @@ function (_React$Component) {
       this.props.fetchPosts();
     }
   }, {
-    key: "componentDidUnmount",
-    value: function componentDidUnmount() {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
       this.props.fetchPosts();
     }
   }, {
@@ -1250,7 +1245,13 @@ function (_React$Component) {
           search = _this$state.search,
           selectedOption = _this$state.selectedOption;
       var filteredPosts = posts.filter(function (post) {
-        return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        if (selectedOption == "title") {
+          return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        }
+
+        if (selectedOption == "description") {
+          return post.description.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+        }
       });
       var sortedPosts = filteredPosts.sort(function (a, b) {
         return b.votes - a.votes;
@@ -1259,10 +1260,14 @@ function (_React$Component) {
         className: "navbar-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
+        placeholder: "Search for a post here...",
         icon: "search",
+        className: "posts-search-field",
         onChange: this.update("search")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
         value: selectedOption,
+        placeholder: "Search by:",
+        className: "post-search-by",
         onChange: this.update("selectedOption"),
         options: options
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -2583,14 +2588,13 @@ var thunk = function thunk(_ref) {
 /*!************************************!*\
   !*** ./frontend/utils/comments.js ***!
   \************************************/
-/*! exports provided: fetchComments, createComment, updateComment, destroyComment */
+/*! exports provided: fetchComments, createComment, destroyComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchComments", function() { return fetchComments; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyComment", function() { return destroyComment; });
 var fetchComments = function fetchComments() {
   return $.ajax({
@@ -2608,15 +2612,6 @@ var createComment = function createComment(commentForm) {
     processData: false
   });
 };
-var updateComment = function updateComment(comment) {
-  return $.ajax({
-    method: 'PATCH',
-    url: "/api/comments/".concat(comment.id),
-    data: {
-      comment: comment
-    }
-  });
-};
 var destroyComment = function destroyComment(comment) {
   return $.ajax({
     method: 'DELETE',
@@ -2630,14 +2625,13 @@ var destroyComment = function destroyComment(comment) {
 /*!*********************************!*\
   !*** ./frontend/utils/posts.js ***!
   \*********************************/
-/*! exports provided: getPosts, createPost, revisePost, destroyPost, postVoteToPost, deleteVoteFromPost */
+/*! exports provided: getPosts, createPost, destroyPost, postVoteToPost, deleteVoteFromPost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPosts", function() { return getPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "revisePost", function() { return revisePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPost", function() { return destroyPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postVoteToPost", function() { return postVoteToPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteVoteFromPost", function() { return deleteVoteFromPost; });
@@ -2654,25 +2648,6 @@ var createPost = function createPost(postForm) {
     // user: current_user,
     contentType: false,
     processData: false
-  });
-}; // export const editPost = postForm => (
-//   $.ajax({
-//     method: 'POST',
-//     url: 'api/posts',
-//     data: postForm,
-//     // user: current_user,
-//     contentType: false,
-//     processData: false
-//   })
-// );
-
-var revisePost = function revisePost(post) {
-  return $.ajax({
-    method: 'PATCH',
-    url: "/api/posts/".concat(post.id),
-    data: {
-      post: post
-    }
   });
 };
 var destroyPost = function destroyPost(post) {
@@ -2780,21 +2755,7 @@ var postUser = function postUser(user) {
       user: user
     }
   });
-}; // const user = {
-//   id: 1,
-//   username: "",
-//   email: "",
-//   password: "password"
-// }
-// const data = {
-//   user: {
-//     id: 1,
-//     username: "",
-//     email: "",
-//     password: "password"
-//   }
-// }
-
+};
 var postSession = function postSession(user) {
   return $.ajax({
     url: '/api/session',

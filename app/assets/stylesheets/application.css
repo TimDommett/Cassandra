@@ -16,7 +16,8 @@
 
 
  body {
-   background-color: #5BBEEC;
+   background-color: white;
+   /* font-family: sans-serif; */
  }
 
  /* change all padding to a percentage instead of pixels and then set media queries for smaller size and then mobile(with no animation on home page for mobile) */
@@ -25,21 +26,105 @@
   /* #222222 */
   /* small shadow under navbar, look at youtube */
   /* height should be 40-50px */
-  float: left;
   left: 0;
   z-index: 10000;
   width: 100%;
   background-color: #F1F8FE;
   background-color: #515659;
-  background-color: #222222;
+  background-color: #495A63;
   color: white;
   height: 60px;
   /* this color for footer   background-color: #F1F8FE; */
   /* background-color: darkgoldenrod; */
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
   top: 0;
+  display: flex;
 }
+
+.logo {
+  /* float: left; */
+  padding-left: 20%;
+  align-self: center;
+  order: 2;
+  margin-left: auto;
+}
+
+.login_out {
+  float: right;
+  padding-right: 20px;
+  order: 3;
+  /* justify-content: right; */
+  align-self: flex-end;
+  margin-left: 60px;
+  margin-right: 10px;
+}
+
+.navbar-navigation {
+  align-self: center;
+  order: 3;
+  margin-left: auto;
+  color: white;
+
+}
+
+.nav-bar-child {
+  color: inherit;
+  padding-left: 20px;
+}
+
+.dropbtn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+/* dropdown */
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  background-color: #495A63;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 10%;
+  opacity: 0;
+  transition: all 0.5s ease 0s, display 0s linear 0.5s; /* the last value is the transition-delay for visibility */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+  transition-delay: 0s;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+
 
 /* do hover over each post item to make it increase inside slightly so you know which one youre about to click */
 
@@ -56,11 +141,12 @@ margin-left: 10%;
 }
 
 .todo-list-item {
-  background-color: azure;
+  background-color: #f6f6f6;
   padding: 10px;
-  border-radius: 25px;
+  border-radius: 10px;
   width: 90%;
   margin: 10px;
+  margin-left: 40px;
 }
 
 .hero-img {
@@ -79,27 +165,40 @@ margin-left: 10%;
   width: 90%;
 } */
 
-.logo {
-  float: left;
-  padding-left: 20px;
+.posts-search-field {
+  margin-left: 10%;
+  width: 65%;
+  height: 25px;
+  top: 105px;
+  position: fixed;
 }
 
-.login_out {
-  float: right;
-  padding-right: 20px;
+.post-search-by {
+  padding-left: 5%;
+  width: 25%;
+  padding-right: 10%;
 
 }
+
+
+
+
+
+
+
+
 
 .new_post_btn {
   /* margin-left: 43%; */
   border-radius: 25px;
-  background-color: white;
+  background-color: #495A63;
   height: 10px;
   padding: 5px;
   position: fixed;
   overflow: hidden;
   bottom: 20px;
-  border: 1px solid darkblue;
+  border: 1px solid black;
+  color: white;
 }
 
 /* Need to create spacer at bottom if new post is open */
@@ -107,7 +206,7 @@ margin-left: 10%;
   width: 100%;
   /* margin-left: 35%; */
   border-radius: 10px;
-  background-color: aliceblue;
+  background-color: #FAFAFA;
 
   position: fixed;
   overflow: hidden;
@@ -142,6 +241,11 @@ margin-left: 10%;
   display: flex;
   align-items: flex-start;
   margin: 10px;
+  margin-left: 3%;
+}
+
+.post-field-link {
+
 }
 
 .post-field {
@@ -153,41 +257,6 @@ margin-left: 10%;
   padding-bottom: 5px;
 }
 
-
-/* dropdown */
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 
 
@@ -213,9 +282,9 @@ margin-left: 10%;
 .threed:hover
 {
         box-shadow:
-                1px 1px #53a7ea,
-                2px 2px #53a7ea,
-                3px 3px #53a7ea;
+                1px 1px #C3C3C3,
+                2px 2px #C3C3C3,
+                3px 3px #C3C3C3;
         -webkit-transform: translateX(-3px);
         transform: translateX(-3px);
         transition:all 0.3s ease;

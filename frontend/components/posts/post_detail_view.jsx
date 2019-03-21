@@ -26,13 +26,10 @@ class PostDetailView extends React.Component {
         <p className="post-detail">{post.description}</p>
         <label className="">Link:</label>
         <p className="post-link">{post.link}</p>
-        <button className="update-btn" onClick={ updatePost }>
-          Update Post
-        </button>
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post
         </button>
-
+        // maybe because going from one container down like 3 roots to get to the aimed at component
         <CommentListContainer post_id={post.id} />
       </div>
     );

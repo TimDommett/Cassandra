@@ -16,16 +16,6 @@ export const createComment = commentForm => (
   })
 );
 
-
-
-export const updateComment = comment => (
-$.ajax({
-    method: 'PATCH',
-    url: `/api/comments/${comment.id}`,
-    data: { comment }
-  })
-);
-
 export const destroyComment = comment => (
 $.ajax({
     method: 'DELETE',
