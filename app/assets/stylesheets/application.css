@@ -35,7 +35,7 @@
    font-family: 'Cinzel Decorative', cursive;
    text-align: left;
 }
- 
+
 
  /* change all padding to a percentage instead of pixels and then set media queries for smaller size and then mobile(with no animation on home page for mobile) */
 
@@ -272,10 +272,11 @@
 }
 
 .hero-img {
-  width: 65%;
-  /* float: right; */
-  position: absolute;
-  margin-left: 35%;
+    width: 69%;
+    /* float: right; */
+    position: absolute;
+    margin-left: 31%;
+    top: 65px;
 }
 
 .num-votes {
