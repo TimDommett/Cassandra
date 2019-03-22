@@ -7,7 +7,7 @@ class Api::CommentsController < ApplicationController
     # @comment.post_id = params[:post_id]
     # @comment.user_id = current_user.id
     if @comment.save
-      render :index
+      render :show
     else
       render json: @comment.errors.full_messages, status: :unprocessable_entity
     end

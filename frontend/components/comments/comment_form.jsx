@@ -34,6 +34,10 @@ class CommentForm extends React.Component {
   //   );
   // }
 
+  // navigateToComments() {
+  //   this.props.history.push('/posts');
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     // const post_id = parseInt(this.props.match.params.post_id);
@@ -57,10 +61,11 @@ class CommentForm extends React.Component {
   //   // This will fail because we do not have a AWS bucket set up for this project
   //   // presently.
     this.props.newComment(commentForm);
-    // this.navigateToPosts();
+    // this.setState({ state: this.state });
   }
 
   render() {
+    // const { comment, post_id, user_id} = this.state;
     return (
       <form className="comment-form" onSubmit={ this.handleSubmit }>
         <label>Comment:

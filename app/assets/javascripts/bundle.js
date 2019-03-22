@@ -514,6 +514,9 @@ function (_React$Component) {
     //     }) // reset form
     //   );
     // }
+    // navigateToComments() {
+    //   this.props.history.push('/posts');
+    // }
 
   }, {
     key: "handleSubmit",
@@ -539,11 +542,12 @@ function (_React$Component) {
       //   // This will fail because we do not have a AWS bucket set up for this project
       //   // presently.
 
-      this.props.newComment(commentForm); // this.navigateToPosts();
+      this.props.newComment(commentForm); // this.setState({ state: this.state });
     }
   }, {
     key: "render",
     value: function render() {
+      // const { comment, post_id, user_id} = this.state;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "comment-form",
         onSubmit: this.handleSubmit

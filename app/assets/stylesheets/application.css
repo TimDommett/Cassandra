@@ -22,6 +22,8 @@
 
  .about {
    margin: 5%;
+   width: 60%;
+   text-align: justify;
  }
 
  .about-paragraph {
