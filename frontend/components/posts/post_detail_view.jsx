@@ -25,7 +25,8 @@ class PostDetailView extends React.Component {
       <div className="fade-in todo-list-item-child">
         <p className="post-detail">{post.description}</p>
         <label className="">Link:</label>
-        <p className="post-link">{post.link}</p>
+        <a href={post.link}> {" " + post.link}</a>
+        <br></br>
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post
         </button>

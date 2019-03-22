@@ -1104,9 +1104,9 @@ function (_React$Component) {
         className: "post-detail"
       }, post.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: ""
-      }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "post-link"
-      }, post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: post.link
+      }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
       }, "Delete Post"), "// maybe because going from one container down like 3 roots to get to the aimed at component", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
