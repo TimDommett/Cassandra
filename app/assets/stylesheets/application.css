@@ -20,6 +20,15 @@
    /* font-family: sans-serif; */
  }
 
+ .about {
+   margin: 5%;
+ }
+
+ .about-paragraph {
+
+    font-size: larger;
+ }
+
  /* change all padding to a percentage instead of pixels and then set media queries for smaller size and then mobile(with no animation on home page for mobile) */
 
 .nav-bar {
@@ -151,29 +160,80 @@
 
 .search-home {
   width: 30%;
-margin-top: 10%;
-display: flex;
-margin-left: 10%;
-height: 25px;
-border: 2px solid #495A63;
-border-radius: 20px;
-padding-left: 10px;
-}
+  margin-top: 8%;
+  display: flex;
+  margin-left: 6%;
+  height: 25px;
+  border: 2px solid #495A63;
+  border-radius: 20px;
+  padding-left: 10px;
+
+        /* width: 100%; */
+        padding: 12px 24px;
+
+        background-color: transparent;
+        transition: transform 250ms ease-in-out;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #495A63;
+        background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: 18px 18px;
+        background-position: 95% center;
+        border-radius: 50px;
+        border: 1px solid #495A63;
+        transition: all 250ms ease-in-out;
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        &::placeholder {
+            color: color(#495A63 a(0.8));
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+    }
+
+.search-home:hover{
+        padding: 12px 0;
+        outline: 0;
+        border: 2px solid transparent;
+        border-bottom: 2px solid #495A63;
+        border-radius: 0;
+        background-position: 100% center;
+  }
+
+.search-home:focus {
+        padding: 12px 0;
+        outline: 0;
+        border: 1px solid transparent;
+        border-bottom: 2px solid #495A63;
+        border-radius: 0;
+        background-position: 100% center;
+  }
+
 
 .home-copy-title {
 
-    font-family: 'Muli', sans-serif;
-    margin-left: 50px;
-    margin-top: 50px;
-    /* text-align: justify; */
+      font-family: 'Muli', sans-serif;
+      margin-left: 110px;
+      margin-top: 70px;
+      width: 35%;
+      /* text-align: justify; */
+      font-family: 'Cinzel Decorative', cursive
 }
 
 .home-copy {
   font-family: 'Ovo', serif;
-  font-size: larger;
-  margin-left: 50px;
-  /* margin-top: 50px; */
-  text-align: justify;
+      font-size: larger;
+      margin-left: 110px;
+      /* margin-top: 50px; */
+      width: 30%;
+      text-align: justify;
 }
 
 .navbar-spacer {
@@ -205,7 +265,9 @@ padding-left: 10px;
 
 .hero-img {
   width: 65%;
-  float: right;
+  /* float: right; */
+  position: absolute;
+  margin-left: 35%;
 }
 
 .num-votes {
