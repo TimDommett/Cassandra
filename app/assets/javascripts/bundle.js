@@ -487,7 +487,9 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(CommentForm).call(this, props));
     _this.state = {
       comment: "",
-      post_id: _this.props.post_id // user_id: user_id,
+      post_id: _this.props.post_id,
+      user_id: _this.props.user_id // user_id: this.state.currentUser
+      // user_id: user_id,
       // post_id: post_id,
 
     };
@@ -523,7 +525,8 @@ function (_React$Component) {
 
       var commentForm = new FormData();
       commentForm.append('comment[comment]', this.state.comment);
-      commentForm.append('comment[post_id]', this.state.post_id); // commentForm.append('post[description]', this.state.description);
+      commentForm.append('comment[post_id]', this.state.post_id);
+      commentForm.append('comment[user_id]', this.state.user_id); // commentForm.append('post[description]', this.state.description);
       // commentForm.append('post[link]', this.state.link);
       // commentForm.append('post[tags]', this.state.tags);
       //   // add our coordinates

@@ -8,6 +8,8 @@ class CommentForm extends React.Component {
     this.state = {
       comment: "",
       post_id: this.props.post_id,
+      user_id: this.props.user_id,
+      // user_id: this.state.currentUser
       // user_id: user_id,
       // post_id: post_id,
     };
@@ -41,6 +43,7 @@ class CommentForm extends React.Component {
     const commentForm = new FormData();
     commentForm.append('comment[comment]', this.state.comment);
     commentForm.append('comment[post_id]', this.state.post_id);
+    commentForm.append('comment[user_id]', this.state.user_id);
     // commentForm.append('post[description]', this.state.description);
     // commentForm.append('post[link]', this.state.link);
     // commentForm.append('post[tags]', this.state.tags);

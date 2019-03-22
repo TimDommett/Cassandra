@@ -4,8 +4,8 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.post_id = params[:post_id]
     @comment.user_id = current_user.id
-    @comment.post_id = selected_post.id
     if @comment.save
       render :show
     else
@@ -14,12 +14,12 @@ class Api::CommentsController < ApplicationController
   end
 
   def show
-    @comment = selected_comment
+    @comment = Comment.find(params[:id])
   end
 
   def index
-    comments = selected_post.comments
-    render json: comments
+    @comments = Comment.where(selected_post)
+    render json: @comments
   end
 
   def destroy
@@ -27,27 +27,31 @@ class Api::CommentsController < ApplicationController
     render json: comment
   end
 
-  def update
-    comment = Comment.find(params[:id])
-    if comment
-      comment.update(comment_params)
-      render json: comment
-    else
-      render json: { message: 'not found', status: 404 }
-    end
-  end
+
+
+  # def update
+  #   comment = Comment.find(params[:id])
+  #   if comment
+  #     comment.update(comment_params)
+  #     render json: comment
+  #   else
+  #     render json: { message: 'not found', status: 404 }
+  #   end
+  # end
 
   private
 
   def selected_comment
-    Comment.find_by(params[:id])
+    comment.find_by(params[:post_id])
   end
 
   def selected_post
-    Post.find_by(params[:id])
+    # Post.find_by(params[:id])
+    params[:post_id]
   end
 
   def comment_params
     params.require(:comment).permit(:comment, :post_id, :user_id)
   end
+
 end
