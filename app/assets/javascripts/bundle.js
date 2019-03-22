@@ -372,7 +372,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "navbar-spacer"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Created as a testament to the power of free education."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "about-paragraph"
-  }, " Cassandra was created entirely using completely free online recorces by a developer with no previous experience to illustrate the power of free online education."));
+  }, " Cassandra was created entirely using completely free online recorces by a developer with no previous experience to illustrate the power of free online education. Cassandra was desgined to be a hub for free online learning with the hope that it will make sorting through and finding quality educational recources easier for those looking. We live in a time where the cost of quality education is so high that not many people can afford it, leading to institutional class devides and unequal opportunity to jobs and hence a system whioch makes it extremely hard for individuals to break out of the income brackets that they were born into."));
 });
 
 /***/ }),
@@ -820,7 +820,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "home-copy"
   }, "Come learn, share and make the world a better place by making access to information and education free for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     label: "Search home",
-    placeholder: "Search here for a subject you want to learn...",
+    placeholder: "Search for free courses here by typing in the subject you want to learn...",
     icon: "search",
     className: "search-home"
   }));
@@ -1276,7 +1276,7 @@ function (_React$Component) {
         className: "posts-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "posts-copy"
-      }, "Description of what the page is about and brief thing giving suggestion of what they should do."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Search here to find courses to start learning for your new career or to improve your skills at your current job. Vote for any recources you think have value and post any courses you have found to help others know what could help them get to that next stage of their careers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
         placeholder: "Search for a post here...",
         icon: "search",

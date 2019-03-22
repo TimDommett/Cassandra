@@ -49,7 +49,7 @@ class PostIndex extends React.Component {
       <div>
         <div className="navbar-spacer"></div>
         <div className="posts-header-container">
-          <h2 className="posts-copy">Description of what the page is about and brief thing giving suggestion of what they should do.
+          <h2 className="posts-copy">Search here to find courses to start learning for your new career or to improve your skills at your current job. Vote for any recources you think have value and post any courses you have found to help others know what could help them get to that next stage of their careers.
           </h2>
           <div>
             <input label="Search Post" placeholder="Search for a post here..." icon="search" className="posts-search-field" onChange={this.update("search")}/>
