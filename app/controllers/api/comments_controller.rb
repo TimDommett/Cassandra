@@ -3,13 +3,13 @@ class Api::CommentsController < ApplicationController
 
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.post_id = params[:post_id]
-    @comment.user_id = current_user.id
-    if @comment.save
+    comment = Comment.new(comment_params)
+    comment.post_id = params[:post_id]
+    comment.user_id = params[:user_id]
+    if comment.save
       render :show
     else
-      render json: @comment.errors.full_messages, status: :unprocessable_entity
+      render json: comment.errors.full_messages, status: :unprocessable_entity
     end
   end
 

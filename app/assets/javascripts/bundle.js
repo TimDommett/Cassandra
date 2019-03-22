@@ -488,7 +488,7 @@ function (_React$Component) {
     _this.state = {
       comment: "",
       post_id: _this.props.post_id,
-      user_id: _this.props.user_id // user_id: this.state.currentUser
+      user_id: currentUser.id // user_id: this.state.currentUser
       // user_id: user_id,
       // post_id: post_id,
 
