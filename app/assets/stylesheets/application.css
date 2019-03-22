@@ -31,6 +31,12 @@
     font-size: larger;
  }
 
+ .about-title {
+   font-family: 'Cinzel Decorative', cursive;
+   text-align: left;
+}
+ 
+
  /* change all padding to a percentage instead of pixels and then set media queries for smaller size and then mobile(with no animation on home page for mobile) */
 
 .nav-bar {
