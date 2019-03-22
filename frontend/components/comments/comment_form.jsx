@@ -69,7 +69,7 @@ class CommentForm extends React.Component {
             className="comment-input"
             ref="comment"
             value={ this.state.comment }
-            placeholder="Comment Here..."
+            placeholder="Write comment Here..."
             onChange={ this.update('comment') }
             required />
         </label>

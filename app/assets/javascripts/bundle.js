@@ -551,7 +551,7 @@ function (_React$Component) {
         className: "comment-input",
         ref: "comment",
         value: this.state.comment,
-        placeholder: "Comment Here...",
+        placeholder: "Write comment Here...",
         onChange: this.update('comment'),
         required: true
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1957,42 +1957,39 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-post-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "new-post-title"
+        className: "new-post-title new-post-form-child"
       }, "Create A Post!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "post-field"
-      }, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: title,
         onChange: this.update('title'),
-        className: "post-field-title"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "post-field"
-      }, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Title or Name of Course...",
+        className: "post-field-title new-post-form-child"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "textarea",
         value: description,
         onChange: this.update('description'),
-        className: "post-field-description"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "post-field"
-      }, "Link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        placeholder: "Write a description of the course here...",
+        className: "post-field-description new-post-form-child"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: link,
         onChange: this.update('link'),
-        className: "post-field-link"
+        placeholder: "Add a link to the course here...",
+        className: "post-field-link new-post-form-child"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "button-holder"
+        className: "button-holder new-post-form-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Create Post",
         className: "new-post-button"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "post-field"
+        className: "post-field-tags new-post-form-child"
       }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "button-holder"
+        className: "button-holder new-post-form-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "new-post-button",
+        className: "new-post-button new-post-form-child",
         onClick: this.navigateToPosts
       }, "Cancel"))));
     }

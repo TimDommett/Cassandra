@@ -156,6 +156,8 @@ display: flex;
 margin-left: 10%;
 height: 25px;
 border: 2px solid #495A63;
+border-radius: 20px;
+padding-left: 10px;
 }
 
 .home-copy-title {
@@ -268,17 +270,19 @@ border: 2px solid #495A63;
   width: 100%;
   /* margin-left: 35%; */
   border-radius: 10px;
-  background-color: #FAFAFA;
+  background-color: #596E79;
 
   position: fixed;
   overflow: hidden;
   bottom: 0;
+
 }
 
 .new-post-title {
   padding: 5px;
   display: flex;
   align-self: center;
+  color: white;
 }
 
 .create-new-post {
@@ -303,6 +307,10 @@ border: 2px solid #495A63;
   display: flex;
   align-items: flex-start;
   margin: 10px;
+  margin-left: 3%;
+}
+
+.new-post-form-child {
   margin-left: 3%;
 }
 

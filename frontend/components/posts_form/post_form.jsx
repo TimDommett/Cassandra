@@ -69,45 +69,45 @@ class PostForm extends React.Component {
     return (
       <div className="new-post-container">
         <div className="new-post-form">
-          <h3 className="new-post-title">Create A Post!</h3>
+          <h3 className="new-post-title new-post-form-child">Create A Post!</h3>
 
           <form onSubmit={this.handleSubmit}>
-          <label className="post-field">Title</label>
           <input
             type="text"
             value={title}
             onChange={this.update('title')}
-            className="post-field-title"
+            placeholder="Title or Name of Course..."
+            className="post-field-title new-post-form-child"
           />
-            <label className="post-field">Description</label>
             <input
               type="textarea"
               value={description}
               onChange={this.update('description')}
-              className="post-field-description"
+              placeholder="Write a description of the course here..."
+              className="post-field-description new-post-form-child"
             />
-            <label className="post-field">Link</label>
             <input
               type="text"
               value={link}
               onChange={this.update('link')}
-              className="post-field-link"
+              placeholder="Add a link to the course here..."
+              className="post-field-link new-post-form-child"
             />
 
 
-            <div className="button-holder">
+            <div className="button-holder new-post-form-child">
               <input
                 type="submit"
                 value="Create Post"
                 className="new-post-button"
               />
             </div>
-            <label className="post-field">Tags</label>
+            <label className="post-field-tags new-post-form-child">Tags</label>
             <Tags/>
           </form>
-          <div className="button-holder">
+          <div className="button-holder new-post-form-child">
             <button
-              className="new-post-button"
+              className="new-post-button new-post-form-child"
               onClick={this.navigateToPosts}
             >
               Cancel
