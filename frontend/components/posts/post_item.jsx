@@ -49,7 +49,7 @@ class PostItem extends React.Component {
       <li className="todo-list-item threed grow">
         <div className="todo-header todo-list-item-child">
           <img className="index-image" src={post.photoUrl}/>
-          <h3><a onClick={this.toggleDetail}>{title}</a></h3>
+          <h3 className="post-item-title"><a onClick={this.toggleDetail}>{title}</a></h3>
         </div>
         {description}
         <LikeItem

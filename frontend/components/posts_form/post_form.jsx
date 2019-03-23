@@ -63,7 +63,7 @@ class PostForm extends React.Component {
 
   render() {
     const { title, description, link, tags} = this.state;
-    const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
+    const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" src={this.state.photoUrl} /> : null;
 
     return (
       <div className="new-post-container">
@@ -79,10 +79,8 @@ class PostForm extends React.Component {
             className="post-field-title new-post-form-child"
           />
           <div className="button-holder">
-            <h3>Image preview </h3>
             {preview}
-            <h3 className="button-holder">Add a Picture</h3>
-            <input type="file" className="new-bench-button"
+            <input type="file" className="image-upload-button new-post-form-child"
               onChange={this.handleFile.bind(this)}/>
           </div>
             <input

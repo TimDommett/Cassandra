@@ -1025,7 +1025,7 @@ __webpack_require__.r(__webpack_exports__);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
     className: "num-votes"
   }, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "todo-list-item-child",
+    className: "todo-list-item-child vote-button",
     onClick: voteButtonAction
   }, voteButtonText));
 });
@@ -1481,7 +1481,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "index-image",
         src: post.photoUrl
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "post-item-title"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.toggleDetail
       }, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
         post: post,
@@ -1971,8 +1973,8 @@ function (_React$Component) {
           link = _this$state.link,
           tags = _this$state.tags;
       var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        height: "200px",
-        width: "200px",
+        className: "image-preview new-post-form-child",
+        width: "100px",
         src: this.state.photoUrl
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1991,11 +1993,9 @@ function (_React$Component) {
         className: "post-field-title new-post-form-child"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image preview "), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "button-holder"
-      }, "Add a Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
-        className: "new-bench-button",
+        className: "image-upload-button new-post-form-child",
         onChange: this.handleFile.bind(this)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "textarea",
