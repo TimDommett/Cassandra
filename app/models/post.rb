@@ -12,6 +12,7 @@
 class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
+  validate :ensure_photo
   # validate :chirp_too_long
 
   has_many :votes,
@@ -23,6 +24,8 @@ class Post < ApplicationRecord
     primary_key: :id,
     foreign_key: :post_id,
     class_name: :Comment
+
+  has_one_attached :photo
 
 # check the next two
   # has_many :voters,
@@ -37,6 +40,12 @@ class Post < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
+
+  def ensure_photo
+    unless self.photo.attached?
+      errors[photo] << "Must be attached."
+    end
+  end
 
   # has_and_belongs_to_many :tags
   # def chirp_too_long

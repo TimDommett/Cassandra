@@ -48,6 +48,7 @@ class PostItem extends React.Component {
     return (
       <li className="todo-list-item threed grow">
         <div className="todo-header todo-list-item-child">
+          <img className="index-image" src={post.photoUrl}/>
           <h3><a onClick={this.toggleDetail}>{title}</a></h3>
         </div>
         {description}

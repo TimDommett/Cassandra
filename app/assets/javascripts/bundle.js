@@ -1478,7 +1478,10 @@ function (_React$Component) {
         className: "todo-list-item threed grow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "todo-header todo-list-item-child"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "index-image",
+        src: post.photoUrl
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         onClick: this.toggleDetail
       }, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
         post: post,
@@ -1894,11 +1897,12 @@ function (_React$Component) {
       title: '',
       description: '',
       link: '',
-      tags: [] // photoFile: null,
-      // photoUrl: null
-
+      tags: [],
+      photoFile: null,
+      photoUrl: null
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     _this.navigateToPosts = _this.navigateToPosts.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1916,17 +1920,26 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
-    } // handleFile(e) {
-    //   const file = e.currentTarget.files[0];
-    //   const fileReader = new FileReader();
-    //   fileReader.onloadend = () => {
-    //     this.setState({ photoFile: file, photoUrl: fileReader.result });
-    //   };
-    //   if (file) {
-    //     fileReader.readAsDataURL(file);
-    //   }
-    // }
-    // This will be where we create our form data to submit our photo
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this3 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        _this3.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    } // This will be where we create our form data to submit our photo
 
   }, {
     key: "handleSubmit",
@@ -1939,11 +1952,12 @@ function (_React$Component) {
       formData.append('post[tags]', this.state.tags); // add our coordinates
       // formData.append('post[lat]', this.coords['lat']);
       // formData.append('bench[lng]', this.coords['lng']);
-      // if (this.state.photoFile) {
-      //   formData.append('bench[photo]', this.state.photoFile);
-      // }
-      // This will fail because we do not have a AWS bucket set up for this project
+
+      if (this.state.photoFile) {
+        formData.append('post[photo]', this.state.photoFile);
+      } // This will fail because we do not have a AWS bucket set up for this project
       // presently.
+
 
       this.props.newPost(formData);
       this.navigateToPosts();
@@ -1955,9 +1969,12 @@ function (_React$Component) {
           title = _this$state.title,
           description = _this$state.description,
           link = _this$state.link,
-          tags = _this$state.tags; // const { lat, lng } = this.coords;
-      // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
-
+          tags = _this$state.tags;
+      var preview = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        height: "200px",
+        width: "200px",
+        src: this.state.photoUrl
+      }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-post-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1972,7 +1989,15 @@ function (_React$Component) {
         onChange: this.update('title'),
         placeholder: "Title or Name of Course...",
         className: "post-field-title new-post-form-child"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "button-holder"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image preview "), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "button-holder"
+      }, "Add a Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        className: "new-bench-button",
+        onChange: this.handleFile.bind(this)
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "textarea",
         value: description,
         onChange: this.update('description'),
