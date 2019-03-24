@@ -1025,9 +1025,12 @@ __webpack_require__.r(__webpack_exports__);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
     className: "num-votes"
   }, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "todo-list-item-child",
+    onClick: voteButtonAction
+  }, voteButtonText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "todo-list-item-child vote-button",
     onClick: voteButtonAction
-  }, voteButtonText));
+  }));
 });
 
 /***/ }),
@@ -1109,7 +1112,7 @@ function (_React$Component) {
       }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
-      }, "Delete Post"), "// maybe because going from one container down like 3 roots to get to the aimed at component", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Delete Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         post_id: post.id
       }));
     }

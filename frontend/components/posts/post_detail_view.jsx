@@ -30,7 +30,6 @@ class PostDetailView extends React.Component {
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post
         </button>
-        // maybe because going from one container down like 3 roots to get to the aimed at component
         <CommentListContainer post_id={post.id} />
       </div>
     );

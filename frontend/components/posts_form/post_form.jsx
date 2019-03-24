@@ -80,7 +80,9 @@ class PostForm extends React.Component {
           />
           <div className="button-holder">
             {preview}
-            <input type="file" className="image-upload-button new-post-form-child"
+            <input
+              type="file"
+              className="image-upload-button new-post-form-child"
               onChange={this.handleFile.bind(this)}/>
           </div>
             <input

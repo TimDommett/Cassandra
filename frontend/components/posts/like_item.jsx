@@ -11,7 +11,8 @@ export default ({ post, votePost, unVotePost }) => {
   return (
     <li>
       <p><strong className="num-votes">Votes: {post.votes}</strong></p>
-      <button className="todo-list-item-child vote-button" onClick={voteButtonAction}>{voteButtonText}</button>
+      <button className="todo-list-item-child" onClick={voteButtonAction}>{voteButtonText}</button>
+      <button className="todo-list-item-child vote-button" onClick={voteButtonAction}></button>
     </li>
   );
 }
