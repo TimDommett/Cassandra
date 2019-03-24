@@ -27,6 +27,9 @@ class Post < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :tags, 
+  through: :tags
+
 # check the next two
   # has_many :voters,
   #   through: :votes,
