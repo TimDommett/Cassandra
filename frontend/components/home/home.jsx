@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <div className="home">
+  <div className="home fade-in">
     <div className="navbar-spacer"></div>
     <div className="hero-img-frame">
       <img className="hero-img" src="https://gdurl.com/LOdJ" />

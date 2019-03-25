@@ -27,7 +27,7 @@ class Login extends React.Component {
   render() {
     // console.log(this.props);
     return (
-      <div className="session-form">
+      <div className="session-form fade-in">
         <div className="navbar-spacer">
         </div>
         <h2>Log In!</h2>

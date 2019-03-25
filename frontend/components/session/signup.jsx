@@ -25,7 +25,7 @@ class Signup extends React.Component {
 
   render () {
     return (
-      <div className="session-form">
+      <div className="session-form fade-in">
         <h2>Sign Up!</h2>
         <form>
           <div className="navbar-spacer">

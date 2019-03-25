@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default () => (
-  <div className="about">
+  <div className="about fade-in">
     <div className="navbar-spacer">
     </div>
     <h1 className="about-title">Created as a testament to the power of free education.</h1>
