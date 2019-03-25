@@ -26,7 +26,7 @@ export default ({ currentUser, logout }) => {
           <div class="dropdown-content">
           <a href="#">Software Development</a>
           <a href="#">Economics</a>
-          <a href="#">Mathemtics</a>
+          <a href="#">All Categories</a>
         </div>
       </div>
         <Link className="nav_btn nav-bar-child" to="/posts">Recources</Link>
