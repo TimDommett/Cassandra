@@ -109,7 +109,9 @@ class PostForm extends React.Component {
               />
             </div>
             <label className="post-field-tags new-post-form-child">Tags</label>
-            <Tags/>
+            <Tags
+            onChange={this.update('tags')}
+            />
           </form>
           <div className="button-holder new-post-form-child">
             <button
