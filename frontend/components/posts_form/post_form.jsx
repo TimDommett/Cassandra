@@ -11,6 +11,7 @@ class PostForm extends React.Component {
       description: '',
       link: '',
       tags: [],
+      categories: [],
       photoFile: null,
       photoUrl: null
     };
@@ -54,6 +55,8 @@ class PostForm extends React.Component {
 
   handleAddition(tag) {
     this.setState(state => ({ tags: [...state.tags, tag] }));
+    const current_ind = this.state.tags.length;
+    // console.log(this.state.tags[current_ind - 1].text);
     // this.props.update(tags)
   }
 
@@ -71,11 +74,24 @@ class PostForm extends React.Component {
   // This will be where we create our form data to submit our photo
   handleSubmit(e) {
     e.preventDefault();
+    // try while function
+    // console.log(this.state.tags);
+          // const categories = [];
+
+    this.state.tags.map(tag =>
+      // this.state.categories.push(tag[index].text)
+      // categories = [],
+      // const word = tag.text;
+      this.state.categories.push(tag.text),
+      // categories.push(tag.text),
+    //   console.log(categories)
+    );
     const formData = new FormData();
     formData.append('post[title]', this.state.title);
     formData.append('post[description]', this.state.description);
     formData.append('post[link]', this.state.link);
-    formData.append('post[tags]', this.state.tags);
+    // formData.append('post[tags]', this.state.tags);
+    formData.append("post[categories]", this.state.categories);
     // add our coordinates
     // formData.append('post[lat]', this.coords['lat']);
     // formData.append('bench[lng]', this.coords['lng']);

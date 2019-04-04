@@ -64,6 +64,6 @@ end
   private
 
   def post_params
-    post.require(:post).permit(:title, :description, :link, :user_id)
+    post.require(:post).permit(:title, :description, :link, :user_id, :categories)
   end
 end
