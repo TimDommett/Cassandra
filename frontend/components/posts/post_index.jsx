@@ -38,13 +38,18 @@ class PostIndex extends React.Component {
   render() {
     const { posts, updatePost, deletePost } = this.props;
     const { search, selectedOption } = this.state;
+    // const categorizedPosts = posts.filter(post => {
+    //   if (selectedOption == "title") {
+    //     // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+    //     if (post.categories != undefined) {
+    //       return post.categories.indexOf(search.toLowerCase()) !== -1;
+
+    //     }
+
+      // }
     const filteredPosts = posts.filter(post => {
       if (selectedOption == "title") {
         return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-        // if (post.categories != undefined) {
-        //   return post.categories.includes(search.toLowerCase()) !== -1;
-
-        // }
 
       }
       if (selectedOption == "description") {

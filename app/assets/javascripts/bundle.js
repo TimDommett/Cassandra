@@ -1267,12 +1267,17 @@ function (_React$Component) {
           deletePost = _this$props.deletePost;
       var _this$state = this.state,
           search = _this$state.search,
-          selectedOption = _this$state.selectedOption;
+          selectedOption = _this$state.selectedOption; // const categorizedPosts = posts.filter(post => {
+      //   if (selectedOption == "title") {
+      //     // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+      //     if (post.categories != undefined) {
+      //       return post.categories.indexOf(search.toLowerCase()) !== -1;
+      //     }
+      // }
+
       var filteredPosts = posts.filter(function (post) {
         if (selectedOption == "title") {
-          return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1; // if (post.categories != undefined) {
-          //   return post.categories.includes(search.toLowerCase()) !== -1;
-          // }
+          return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
         }
 
         if (selectedOption == "description") {
