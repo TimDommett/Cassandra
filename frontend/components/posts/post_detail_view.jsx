@@ -26,6 +26,7 @@ class PostDetailView extends React.Component {
         <p className="post-detail">{post.description}</p>
         <label className="">Link:</label>
         <a href={post.link}> {" " + post.link}</a>
+        <p>{post.categories}</p>
         <br></br>
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post

@@ -1109,7 +1109,7 @@ function (_React$Component) {
         className: ""
       }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: post.link
-      }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, post.categories), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
       }, "Delete Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1254,6 +1254,7 @@ function (_React$Component) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
     } // Need to create dropdown so can change what you are filtering by
+    // filtered = posts.map post.categories.include(search)     - both .toLowerCase()     -give suggestions.
 
   }, {
     key: "render",
@@ -1269,7 +1270,9 @@ function (_React$Component) {
           selectedOption = _this$state.selectedOption;
       var filteredPosts = posts.filter(function (post) {
         if (selectedOption == "title") {
-          return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1; // if (post.categories != undefined) {
+          //   return post.categories.includes(search.toLowerCase()) !== -1;
+          // }
         }
 
         if (selectedOption == "description") {
