@@ -1534,14 +1534,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_tag_input__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_tag_input__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1550,9 +1542,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1579,7 +1571,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tags).call(this, props));
     _this.state = {
-      tags: [],
+      // tags: this.props.tags,
       suggestions: [{
         id: 'Software Development',
         text: 'Software Development'
@@ -1596,57 +1588,43 @@ function (_React$Component) {
         id: 'Economics',
         text: 'Economics'
       }]
-    };
-    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
-    _this.handleAddition = _this.handleAddition.bind(_assertThisInitialized(_this));
-    _this.handleDrag = _this.handleDrag.bind(_assertThisInitialized(_this));
+    }; // this.handleDelete = this.handleDelete.bind(this);
+    // this.handleAddition = this.handleAddition.bind(this);
+    // this.handleDrag = this.handleDrag.bind(this);
+
     return _this;
-  }
+  } // handleDelete(i) {
+  //     const { tags } = this.state;
+  //     this.setState({
+  //      tags: tags.filter((tag, index) => index !== i),
+  //     });
+  // }
+  // handleAddition(tag) {
+  //     this.setState(state => ({ tags: [...state.tags, tag] }));
+  //     // this.props.update(tags)
+  // }
+  // handleDrag(tag, currPos, newPos) {
+  //     const tags = [...this.state.tags];
+  //     const newTags = tags.slice();
+  //     newTags.splice(currPos, 1);
+  //     newTags.splice(newPos, 0, tag);
+  //     // re-render
+  //     this.setState({ tags: newTags });
+  // }
+
 
   _createClass(Tags, [{
-    key: "handleDelete",
-    value: function handleDelete(i) {
-      var tags = this.state.tags;
-      this.setState({
-        tags: tags.filter(function (tag, index) {
-          return index !== i;
-        })
-      });
-    }
-  }, {
-    key: "handleAddition",
-    value: function handleAddition(tag) {
-      this.setState(function (state) {
-        return {
-          tags: [].concat(_toConsumableArray(state.tags), [tag])
-        };
-      });
-    }
-  }, {
-    key: "handleDrag",
-    value: function handleDrag(tag, currPos, newPos) {
-      var tags = _toConsumableArray(this.state.tags);
-
-      var newTags = tags.slice();
-      newTags.splice(currPos, 1);
-      newTags.splice(newPos, 0, tag); // re-render
-
-      this.setState({
-        tags: newTags
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$state = this.state,
           tags = _this$state.tags,
           suggestions = _this$state.suggestions;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tag_input__WEBPACK_IMPORTED_MODULE_2__["WithContext"], {
-        tags: tags,
+        tags: this.props.tags,
         suggestions: suggestions,
-        handleDelete: this.handleDelete,
-        handleAddition: this.handleAddition,
-        handleDrag: this.handleDrag,
+        handleDelete: this.props.handleDelete,
+        handleAddition: this.props.handleAddition,
+        handleDrag: this.props.handleDrag,
         delimiters: delimiters
       }));
     }
@@ -1864,6 +1842,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _posts_tags__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../posts/tags */ "./frontend/components/posts/tags.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1909,6 +1895,9 @@ function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
     _this.navigateToPosts = _this.navigateToPosts.bind(_assertThisInitialized(_this));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
+    _this.handleAddition = _this.handleAddition.bind(_assertThisInitialized(_this));
+    _this.handleDrag = _this.handleDrag.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1944,6 +1933,39 @@ function (_React$Component) {
       if (file) {
         fileReader.readAsDataURL(file);
       }
+    } // tagging helper functions
+
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(i) {
+      var tags = this.state.tags;
+      this.setState({
+        tags: tags.filter(function (tag, index) {
+          return index !== i;
+        })
+      });
+    }
+  }, {
+    key: "handleAddition",
+    value: function handleAddition(tag) {
+      this.setState(function (state) {
+        return {
+          tags: [].concat(_toConsumableArray(state.tags), [tag])
+        };
+      }); // this.props.update(tags)
+    }
+  }, {
+    key: "handleDrag",
+    value: function handleDrag(tag, currPos, newPos) {
+      var tags = _toConsumableArray(this.state.tags);
+
+      var newTags = tags.slice();
+      newTags.splice(currPos, 1);
+      newTags.splice(newPos, 0, tag); // re-render
+
+      this.setState({
+        tags: newTags
+      });
     } // This will be where we create our form data to submit our photo
 
   }, {
@@ -1991,7 +2013,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: title,
-        onChange: this.update('title'),
+        onChange: this.update("title"),
         placeholder: "Title or Name of Course...",
         className: "post-field-title new-post-form-child"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2003,13 +2025,13 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "textarea",
         value: description,
-        onChange: this.update('description'),
+        onChange: this.update("description"),
         placeholder: "Write a description of the course here...",
         className: "post-field-description new-post-form-child"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: link,
-        onChange: this.update('link'),
+        onChange: this.update("link"),
         placeholder: "Add a link to the course here...",
         className: "post-field-link new-post-form-child"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2020,7 +2042,15 @@ function (_React$Component) {
         className: "new-post-button"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "post-field-tags new-post-form-child"
-      }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"] // value={tags}
+      , {
+        tags: this.state.tags,
+        handleDelete: this.handleDelete,
+        handleAddition: this.handleAddition,
+        handleDrag: this.handleDrag // onChange={this.update('tags')}
+        // update={this.update()}
+
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder new-post-form-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "new-post-button new-post-form-child",

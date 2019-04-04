@@ -17,6 +17,9 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.navigateToPosts = this.navigateToPosts.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.handleAddition = this.handleAddition.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
   }
 
   navigateToPosts() {
@@ -38,6 +41,31 @@ class PostForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
+  }
+
+
+  // tagging helper functions
+  handleDelete(i) {
+    const { tags } = this.state;
+    this.setState({
+      tags: tags.filter((tag, index) => index !== i),
+    });
+  }
+
+  handleAddition(tag) {
+    this.setState(state => ({ tags: [...state.tags, tag] }));
+    // this.props.update(tags)
+  }
+
+  handleDrag(tag, currPos, newPos) {
+    const tags = [...this.state.tags];
+    const newTags = tags.slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    // re-render
+    this.setState({ tags: newTags });
   }
 
   // This will be where we create our form data to submit our photo
@@ -62,44 +90,46 @@ class PostForm extends React.Component {
   }
 
   render() {
-    const { title, description, link, tags} = this.state;
+    const { title, description, link, tags } = this.state;
     const preview = this.state.photoUrl ? <img className="image-preview new-post-form-child" width="100px" src={this.state.photoUrl} /> : null;
 
     return (
       <div className="new-post-container">
         <div className="new-post-form">
-          <h3 className="new-post-title new-post-form-child">Create A Post!</h3>
+          <h3 className="new-post-title new-post-form-child">
+            Create A Post!
+          </h3>
 
           <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={title}
-            onChange={this.update('title')}
-            placeholder="Title or Name of Course..."
-            className="post-field-title new-post-form-child"
-          />
-          <div className="button-holder">
-            {preview}
             <input
-              type="file"
-              className="image-upload-button new-post-form-child"
-              onChange={this.handleFile.bind(this)}/>
-          </div>
+              type="text"
+              value={title}
+              onChange={this.update("title")}
+              placeholder="Title or Name of Course..."
+              className="post-field-title new-post-form-child"
+            />
+            <div className="button-holder">
+              {preview}
+              <input
+                type="file"
+                className="image-upload-button new-post-form-child"
+                onChange={this.handleFile.bind(this)}
+              />
+            </div>
             <input
               type="textarea"
               value={description}
-              onChange={this.update('description')}
+              onChange={this.update("description")}
               placeholder="Write a description of the course here..."
               className="post-field-description new-post-form-child"
             />
             <input
               type="text"
               value={link}
-              onChange={this.update('link')}
+              onChange={this.update("link")}
               placeholder="Add a link to the course here..."
               className="post-field-link new-post-form-child"
             />
-
 
             <div className="button-holder new-post-form-child">
               <input
@@ -108,9 +138,17 @@ class PostForm extends React.Component {
                 className="new-post-button"
               />
             </div>
-            <label className="post-field-tags new-post-form-child">Tags</label>
+            <label className="post-field-tags new-post-form-child">
+              Tags
+            </label>
             <Tags
-            onChange={this.update('tags')}
+              // value={tags}
+              tags={this.state.tags}
+              handleDelete={this.handleDelete}
+              handleAddition={this.handleAddition}
+              handleDrag={this.handleDrag}
+              // onChange={this.update('tags')}
+              // update={this.update()}
             />
           </form>
           <div className="button-holder new-post-form-child">
