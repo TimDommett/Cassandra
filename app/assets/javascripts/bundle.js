@@ -1025,7 +1025,7 @@ __webpack_require__.r(__webpack_exports__);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", {
     className: "num-votes"
   }, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "todo-list-item-child",
+    className: "todo-list-item-child vote-button-one",
     onClick: voteButtonAction
   }, voteButtonText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "todo-list-item-child vote-button",
@@ -1547,15 +1547,15 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "todo-list-item threed grow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "todo-header todo-list-item-child"
+        className: "todo-header todo-list-item-child",
+        onClick: this.toggleDetail
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "index-image",
-        src: post.photoUrl
+        src: post.photoUrl,
+        onClick: this.toggleDetail
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "post-item-title"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        onClick: this.toggleDetail
-      }, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, title))), description, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_like_item__WEBPACK_IMPORTED_MODULE_3__["default"], {
         post: post,
         votePost: this.props.votePost,
         unVotePost: this.props.unVotePost

@@ -292,6 +292,19 @@ margin-right: 100px;
     top: 100px;
 }
 
+.index-image:hover {
+  cursor: pointer;
+}
+
+.todo-header:hover {
+  cursor: pointer;
+}
+
+.vote-button-one {
+
+    /* margin-left: 5%; */
+}
+
 .num-votes {
   float: right;
   margin-right: 2%;

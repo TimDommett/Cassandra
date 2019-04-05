@@ -47,9 +47,9 @@ class PostItem extends React.Component {
 
     return (
       <li className="todo-list-item threed grow">
-        <div className="todo-header todo-list-item-child">
-          <img className="index-image" src={post.photoUrl}/>
-          <h3 className="post-item-title"><a onClick={this.toggleDetail}>{title}</a></h3>
+        <div className="todo-header todo-list-item-child" onClick={this.toggleDetail}>
+          <img className="index-image" src={post.photoUrl} onClick={this.toggleDetail}/>
+          <h3 className="post-item-title"><a >{title}</a></h3>
         </div>
         {description}
         <LikeItem
