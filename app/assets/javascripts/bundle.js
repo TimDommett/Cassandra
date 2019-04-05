@@ -1334,7 +1334,7 @@ function (_React$Component) {
         class: "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
-      }), "Adobe"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), "Software Developement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         for: "opt2",
         class: "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1344,7 +1344,7 @@ function (_React$Component) {
         class: "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
-      }), "Figma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         for: "opt3",
         class: "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1354,7 +1354,7 @@ function (_React$Component) {
         class: "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
-      }), "InVision"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         for: "opt4",
         class: "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1364,7 +1364,7 @@ function (_React$Component) {
         class: "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
-      }), "Sketch"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }), "Whatever"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "fade-in"
       }, sortedPosts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
