@@ -1291,9 +1291,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1330,6 +1330,7 @@ function (_React$Component) {
       category: null
     }; // this.state = {search_param: ""}
 
+    _this.clearSearch = _this.clearSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1355,6 +1356,13 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
+    }
+  }, {
+    key: "clearSearch",
+    value: function clearSearch() {
+      this.setState({
+        category: ""
+      });
     } // Need to create dropdown so can change what you are filtering by
     // filtered = posts.map post.categories.include(search)     - both .toLowerCase()     -give suggestions.
 
@@ -1409,9 +1417,11 @@ function (_React$Component) {
           });
         }));
       } else {
-        postsExist = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        postsExist = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "no-posts-available"
-        }, "Oops, No Posts Where Found in Your Search... Try some other categories.");
+        }, "Oops, No Posts Where Found in Your Search... Clear the search to try find some other categories."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: this.clearSearch
+        }, "Clear Search"));
       }
 
       ;

@@ -15,6 +15,8 @@ class PostIndex extends React.Component {
     super(props);
     this.state = { search: "", selectedOption: "title", category: null };
     // this.state = {search_param: ""}
+    this.clearSearch = this.clearSearch.bind(this);
+
   }
 
   componentDidMount() {
@@ -33,6 +35,12 @@ class PostIndex extends React.Component {
       this.setState({
         [property]: e.target.value
       });
+  }
+
+  clearSearch() {
+    this.setState({
+      category: ""
+    });
   }
 
   // Need to create dropdown so can change what you are filtering by
@@ -93,7 +101,15 @@ class PostIndex extends React.Component {
           ))}
         </ul>
     } else {
-        postsExist = <p className="no-posts-available">Oops, No Posts Where Found in Your Search... Try some other categories.</p>
+        postsExist = (
+          <div>
+            <p className="no-posts-available">
+              Oops, No Posts Where Found in Your Search... Clear the search to try find some
+              other categories.
+            </p>
+            <button onClick={this.clearSearch}>Clear Search</button>
+          </div>
+        );
 
     };
 
@@ -164,8 +180,8 @@ class PostIndex extends React.Component {
                 <span class="label" />two
               </label>
 
-              <label for="opt3" class="radio">
-                <input type="radio" name="rdo" id="opt3" class="hidden" />
+              <label for="opt3" class="radio" >
+                <input type="radio" name="rdo" id="opt3" class="hidden"  />
                 <span class="label" />more
               </label>
 
