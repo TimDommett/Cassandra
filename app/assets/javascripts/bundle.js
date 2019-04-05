@@ -1393,6 +1393,28 @@ function (_React$Component) {
       var sortedPosts = filteredPosts.sort(function (a, b) {
         return b.votes - a.votes;
       });
+      var postsExist;
+
+      if (sortedPosts.length > 0) {
+        postsExist = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "fade-in"
+        }, sortedPosts.map(function (post) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: "post".concat(post.id),
+            post: post,
+            updatePost: updatePost,
+            votePost: _this3.props.votePost,
+            unVotePost: _this3.props.unVotePost,
+            deletePost: deletePost
+          });
+        }));
+      } else {
+        postsExist = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "no-posts-available"
+        }, "Oops, No Posts Where Found in Your Search... Try some other categories.");
+      }
+
+      ;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar-spacer"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1492,18 +1514,7 @@ function (_React$Component) {
         class: "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
-      }), "Whatever"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "fade-in"
-      }, sortedPosts.map(function (post) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: "post".concat(post.id),
-          post: post,
-          updatePost: updatePost,
-          votePost: _this3.props.votePost,
-          unVotePost: _this3.props.unVotePost,
-          deletePost: deletePost
-        });
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "Whatever"))), postsExist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-new-post "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         className: "new_post_btn border-inset",

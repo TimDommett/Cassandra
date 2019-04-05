@@ -76,6 +76,27 @@ class PostIndex extends React.Component {
     });
     const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
 
+    let postsExist;
+      if (sortedPosts.length > 0) {
+
+       postsExist = 
+        <ul className="fade-in">
+          {sortedPosts.map(post => (
+            <PostItem
+              key={`post${post.id}`}
+              post={post}
+              updatePost={updatePost}
+              votePost={this.props.votePost}
+              unVotePost={this.props.unVotePost}
+              deletePost={deletePost}
+            />
+          ))}
+        </ul>
+    } else {
+        postsExist = <p className="no-posts-available">Oops, No Posts Where Found in Your Search... Try some other categories.</p>
+
+    };
+
 
     return (
       <div>
@@ -155,18 +176,8 @@ class PostIndex extends React.Component {
             </div>
           </div>
 
-          <ul className="fade-in">
-            {sortedPosts.map(post => (
-              <PostItem
-                key={`post${post.id}`}
-                post={post}
-                updatePost={updatePost}
-                votePost={this.props.votePost}
-                unVotePost={this.props.unVotePost}
-                deletePost={deletePost}
-              />
-            ))}
-          </ul>
+         {postsExist}
+          
         </div>
         <div className="create-new-post ">
           <Link className="new_post_btn border-inset" to="/posts/new">
