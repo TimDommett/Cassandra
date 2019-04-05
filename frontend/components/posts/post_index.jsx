@@ -39,7 +39,7 @@ class PostIndex extends React.Component {
     const { posts, updatePost, deletePost } = this.props;
     const { search, selectedOption, category } = this.state;
     const categorizedPosts = posts.filter(post => {
-      if (category == null || undefined ) {
+      if ( !category  ) {
       return (
         post
       );
@@ -102,6 +102,7 @@ class PostIndex extends React.Component {
           </div>
           <Select
             value={selectedOption}
+            // inputValue={selectedOption}
             placeholder="Search by:"
             className="post-search-by"
             onChange={this.update("selectedOption")}

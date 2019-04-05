@@ -1271,7 +1271,7 @@ function (_React$Component) {
           selectedOption = _this$state.selectedOption,
           category = _this$state.category;
       var categorizedPosts = posts.filter(function (post) {
-        if (category == null || undefined) {
+        if (!category) {
           return post;
         } else {
           // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
@@ -1311,7 +1311,8 @@ function (_React$Component) {
         className: "posts-search-field",
         onChange: this.update("search")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        value: selectedOption,
+        value: selectedOption // inputValue={selectedOption}
+        ,
         placeholder: "Search by:",
         className: "post-search-by",
         onChange: this.update("selectedOption"),
