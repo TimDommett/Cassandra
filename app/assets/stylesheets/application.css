@@ -254,9 +254,9 @@
   background-color: #f6f6f6;
   padding: 10px;
   border-radius: 10px;
-  width: 90%;
+  width: 70%;
   margin: 10px;
-  margin-left: 3%;
+  margin-left: 20%;
   font-family: 'Neuton', serif;
 }
 
@@ -380,6 +380,14 @@ padding-left: 10px;
 
 }
 
+.category-search-field {
+
+    height: 20px;
+    border-radius: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .posts-copy {
   font-family: 'Ovo', serif;
   margin-top: 15px;
@@ -499,6 +507,22 @@ padding-left: 10px;
 .button-holder {
   padding-left: 10px;
   padding-bottom: 5px;
+}
+
+
+.cntr {
+  
+    width: 12%;
+    float: left;
+    padding-top: 2%;
+    padding-left: 8%;
+    /* position: fixed; */
+}
+
+.radio {
+  display: block;
+
+    padding-bottom: 15px;
 }
 
 

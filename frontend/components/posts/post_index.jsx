@@ -78,20 +78,13 @@ class PostIndex extends React.Component {
         <div className="navbar-spacer" />
         <div className="posts-header-container">
           <h2 className="posts-copy">
-            Search here to find courses to start learning for your new career or
-            to improve your skills at your current job. Vote for any recources
-            you think have value and post any courses you have found to help
-            others know what could help them get to that next stage of their
-            careers.
+            Search here to find courses to start learning for your new
+            career or to improve your skills at your current job. Vote for
+            any recources you think have value and post any courses you have
+            found to help others know what could help them get to that next
+            stage of their careers.
           </h2>
           <div>
-            <input
-              label="Search Post"
-              placeholder="Categories"
-              icon="search"
-              className="posts-search-field"
-              onChange={this.update("category")}
-            />
             <input
               label="Search Post"
               placeholder="Search for a post here..."
@@ -108,6 +101,41 @@ class PostIndex extends React.Component {
             onChange={this.update("selectedOption")}
             options={options}
           />
+
+          <div className="filtering">
+            
+            <div class="cntr">
+              <input
+                label="Search Post"
+                placeholder="Categories"
+                icon="search"
+                className="category-search-field"
+                onChange={this.update("category")}
+              />
+
+              
+              <label for="opt1" class="radio">
+                <input type="radio" name="rdo" id="opt1" class="hidden" />
+                <span class="label" />Adobe
+              </label>
+
+              <label for="opt2" class="radio">
+                <input type="radio" name="rdo" id="opt2" class="hidden" />
+                <span class="label" />Figma
+              </label>
+
+              <label for="opt3" class="radio">
+                <input type="radio" name="rdo" id="opt3" class="hidden" />
+                <span class="label" />InVision
+              </label>
+
+              <label for="opt4" class="radio">
+                <input type="radio" name="rdo" id="opt4" class="hidden" />
+                <span class="label" />Sketch
+              </label>
+            </div>
+          </div>
+
           <ul className="fade-in">
             {sortedPosts.map(post => (
               <PostItem

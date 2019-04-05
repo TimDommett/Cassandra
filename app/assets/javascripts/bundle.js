@@ -1303,12 +1303,6 @@ function (_React$Component) {
         className: "posts-copy"
       }, "Search here to find courses to start learning for your new career or to improve your skills at your current job. Vote for any recources you think have value and post any courses you have found to help others know what could help them get to that next stage of their careers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
-        placeholder: "Categories",
-        icon: "search",
-        className: "posts-search-field",
-        onChange: this.update("category")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        label: "Search Post",
         placeholder: "Search for a post here...",
         icon: "search",
         className: "posts-search-field",
@@ -1320,7 +1314,57 @@ function (_React$Component) {
         className: "post-search-by",
         onChange: this.update("selectedOption"),
         options: options
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filtering"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        class: "cntr"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        label: "Search Post",
+        placeholder: "Categories",
+        icon: "search",
+        className: "category-search-field",
+        onChange: this.update("category")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt1",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt1",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "Adobe"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt2",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt2",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "Figma"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt3",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt3",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "InVision"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt4",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt4",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "Sketch"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "fade-in"
       }, sortedPosts.map(function (post) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
