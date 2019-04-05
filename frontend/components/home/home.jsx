@@ -4,7 +4,7 @@ export default () => (
   <div className="home fade-in">
     <div className="navbar-spacer"></div>
     <div className="hero-img-frame">
-      <img className="hero-img" src="https://gdurl.com/LOdJ" />
+      <img className="hero-img" src="https://gdurl.com/qmie" />
     </div>
     <h1 className="home-copy-title">Created as a testament to the power of free education.</h1>
     <h2 className="home-copy">Come learn, share and make the world a better place by making access to information and education free for everyone.</h2>

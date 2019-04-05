@@ -406,12 +406,15 @@ padding-left: 10px;
 
 
 .vote-button {
-
-
+    transform: translateY(-66px);
+    transform: translate(-32px, -66px);
 }
 
 
-
+.rocket-button {
+  height: 40px;
+  float: right;
+}
 
 
 
@@ -544,4 +547,38 @@ padding-left: 10px;
 {
         box-shadow: inset 0 0 0 3px #53a7ea;
         transition:all 0.3s ease;
+}
+
+
+.vote-button:hover {
+  animation: MoveUpDown 1s linear infinite;
+  /* position: absolute; */
+  /* left: 0;
+  bottom: 0; */
+}
+
+.updown {
+  animation: MoveUpDown 1s linear infinite;
+  /* position: absolute; */
+  /* left: 0;
+  bottom: 0; */
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 100px;
+  }
+}
+
+
+img.vert-move:hover {
+    -webkit-animation: mover 0.7s infinite  alternate;
+    animation: mover 0.7s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
 }

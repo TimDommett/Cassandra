@@ -819,7 +819,7 @@ __webpack_require__.r(__webpack_exports__);
     className: "hero-img-frame"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "hero-img",
-    src: "https://gdurl.com/LOdJ"
+    src: "https://gdurl.com/qmie"
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "home-copy-title"
   }, "Created as a testament to the power of free education."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
@@ -1027,10 +1027,13 @@ __webpack_require__.r(__webpack_exports__);
   }, "Votes: ", post.votes)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "todo-list-item-child",
     onClick: voteButtonAction
-  }, voteButtonText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, voteButtonText), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "todo-list-item-child vote-button",
     onClick: voteButtonAction
-  }));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "rocket-button vert-move",
+    src: "https://image.flaticon.com/icons/svg/1705/1705667.svg"
+  })));
 });
 
 /***/ }),
