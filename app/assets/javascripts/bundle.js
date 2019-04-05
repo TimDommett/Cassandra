@@ -2060,9 +2060,11 @@ function (_React$Component) {
         type: "file",
         className: "image-upload-button new-post-form-child",
         onChange: this.handleFile.bind(this)
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         type: "textarea",
         value: description,
+        cols: "20",
+        rows: "20",
         onChange: this.update("description"),
         placeholder: "Write a description of the course here...",
         className: "post-field-description new-post-form-child"

@@ -393,7 +393,9 @@ padding-left: 10px;
   max-height: 60px;
   /* padding-top: 10px; */
   float: left;
-  padding-bottom: 10px;
+  
+    /* padding-bottom: 10px; */
+    border-radius: 5px;
 }
 
 .post-item-title {

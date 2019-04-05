@@ -132,9 +132,11 @@ class PostForm extends React.Component {
                 onChange={this.handleFile.bind(this)}
               />
             </div>
-            <input
+            <textarea
               type="textarea"
               value={description}
+              cols="20"
+              rows="20"
               onChange={this.update("description")}
               placeholder="Write a description of the course here..."
               className="post-field-description new-post-form-child"
