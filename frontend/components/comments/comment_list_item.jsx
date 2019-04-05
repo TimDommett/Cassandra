@@ -21,11 +21,11 @@ class CommentListItem extends React.Component {
           <p>{this.props.comment.comment}</p>
         </div>
         <div className="comment-buttons">
-          <button
+          {/* <button
             className="delete-btn"
             onClick={this.props.destroyComment}>
             Delete
-          </button>
+          </button> */}
         </div>
       </li>
     );

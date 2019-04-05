@@ -750,10 +750,7 @@ function (_React$Component) {
         className: "comment-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.comment.comment)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "delete-btn",
-        onClick: this.props.destroyComment
-      }, "Delete")));
+      }));
     }
   }]);
 
