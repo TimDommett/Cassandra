@@ -2179,7 +2179,7 @@ function (_React$Component) {
         return (// this.state.categories.push(tag[index].text)
           // categories = [],
           // const word = tag.text;
-          _this4.state.categories.push(tag.text)
+          _this4.state.categories.push(tag.text.toLowerCase())
         );
       } // categories.push(tag.text),
       //   console.log(categories)

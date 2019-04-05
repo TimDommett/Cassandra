@@ -78,13 +78,14 @@ class PostForm extends React.Component {
     // console.log(this.state.tags);
           // const categories = [];
 
-    this.state.tags.map(tag =>
-      // this.state.categories.push(tag[index].text)
-      // categories = [],
-      // const word = tag.text;
-      this.state.categories.push(tag.text),
+    this.state.tags.map(
+      tag =>
+        // this.state.categories.push(tag[index].text)
+        // categories = [],
+        // const word = tag.text;
+        this.state.categories.push(tag.text.toLowerCase())
       // categories.push(tag.text),
-    //   console.log(categories)
+      //   console.log(categories)
     );
     const formData = new FormData();
     formData.append('post[title]', this.state.title);
