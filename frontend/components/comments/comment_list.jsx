@@ -12,10 +12,10 @@ const CommentList = ({ comments, post_id, createComment }) => {
 
   return (
     <div>
+      <CommentForm post_id={post_id} createComment={createComment} />
       <ul className="comments-list">
         { commentItems }
       </ul>
-      <CommentForm post_id={ post_id } createComment={ createComment } />
     </div>
   )
 };

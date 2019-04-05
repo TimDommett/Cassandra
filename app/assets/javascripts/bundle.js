@@ -639,12 +639,12 @@ var CommentList = function CommentList(_ref) {
       comment: comment
     });
   });
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "comments-list"
-  }, commentItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     post_id: post_id,
     createComment: createComment
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "comments-list"
+  }, commentItems));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CommentList);
@@ -1335,6 +1335,36 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         class: "label"
       }), "Software Developement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt2",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt2",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt3",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt3",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        for: "opt4",
+        class: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        name: "rdo",
+        id: "opt4",
+        class: "hidden"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        class: "label"
+      }), "Whatever"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         for: "opt2",
         class: "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

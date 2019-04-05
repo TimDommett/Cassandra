@@ -133,6 +133,21 @@ class PostIndex extends React.Component {
                 <input type="radio" name="rdo" id="opt4" class="hidden" />
                 <span class="label" />Whatever
               </label>
+
+              <label for="opt2" class="radio">
+                <input type="radio" name="rdo" id="opt2" class="hidden" />
+                <span class="label" />two
+              </label>
+
+              <label for="opt3" class="radio">
+                <input type="radio" name="rdo" id="opt3" class="hidden" />
+                <span class="label" />more
+              </label>
+
+              <label for="opt4" class="radio">
+                <input type="radio" name="rdo" id="opt4" class="hidden" />
+                <span class="label" />Whatever
+              </label>
             </div>
           </div>
 

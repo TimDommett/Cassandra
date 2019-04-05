@@ -528,7 +528,7 @@ padding-left: 10px;
     width: 12%;
     float: left;
     padding-top: 2%;
-    padding-left: 8%;
+    padding-left: 6%;
     /* position: fixed; */
 }
 
@@ -589,6 +589,7 @@ padding-left: 10px;
 
 .vote-button:hover {
   animation: MoveUpDown 1s linear infinite;
+  cursor: pointer;
   /* position: absolute; */
   /* left: 0;
   bottom: 0; */
