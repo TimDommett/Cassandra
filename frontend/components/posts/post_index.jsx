@@ -19,6 +19,10 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts();
+    if (this.props.location.state) {
+      this.state.category = this.props.location.state.category;
+
+    }
   }
   componentWillUnmount() {
     this.props.fetchPosts();

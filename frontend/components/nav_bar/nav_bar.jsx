@@ -25,9 +25,10 @@ export default ({ currentUser, logout }) => {
         <div class="dropdown nav-bar-child">
           <button class="dropbtn">Categories</button>
           <div class="dropdown-content">
-          <a href="#">Software Development</a>
+            <a href="#"><Link to={{ pathname: '/posts', state: { category: 'Software Development' } }}>Software Development</Link></a>
           <a href="#">Economics</a>
           <a href="#">All Categories</a>
+            <a href="#"><Link to={{ pathname: '/posts', state: { category: 'two'}}}>two</Link></a>
         </div>
       </div>
         <Link className="nav_btn nav-bar-child" to="/posts">Recources</Link>
