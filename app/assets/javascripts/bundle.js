@@ -895,8 +895,6 @@ __webpack_require__.r(__webpack_exports__);
     href: "#"
   }, "Economics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
-  }, "All Categories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: {
       pathname: '/posts',
@@ -904,7 +902,16 @@ __webpack_require__.r(__webpack_exports__);
         category: 'two'
       }
     }
-  }, "two")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+  }, "two")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: {
+      pathname: '/posts',
+      state: {
+        category: ''
+      }
+    }
+  }, "All Categories")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav_btn nav-bar-child",
     to: "/posts"
   }, "Recources"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
