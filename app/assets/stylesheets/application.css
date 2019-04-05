@@ -481,10 +481,12 @@ padding-left: 10px;
 
 .new-post-form-child {
   margin-left: 3%;
+  font-size: medium;
 }
 
 .post-field-link {
 
+    width: 20%;
 }
 
 .post-field {

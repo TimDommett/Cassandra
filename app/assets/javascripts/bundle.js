@@ -2082,7 +2082,9 @@ function (_React$Component) {
         className: "new-post-button"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "post-field-tags new-post-form-child"
-      }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"] // value={tags}
+      }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-field-categories new-post-form-child"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"] // value={tags}
       , {
         tags: this.state.tags,
         handleDelete: this.handleDelete,
@@ -2090,7 +2092,7 @@ function (_React$Component) {
         handleDrag: this.handleDrag // onChange={this.update('tags')}
         // update={this.update()}
 
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder new-post-form-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "new-post-button new-post-form-child",

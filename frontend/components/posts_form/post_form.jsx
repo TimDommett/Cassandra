@@ -159,15 +159,19 @@ class PostForm extends React.Component {
             <label className="post-field-tags new-post-form-child">
               Tags
             </label>
-            <Tags
-              // value={tags}
-              tags={this.state.tags}
-              handleDelete={this.handleDelete}
-              handleAddition={this.handleAddition}
-              handleDrag={this.handleDrag}
+            <div className="post-field-categories new-post-form-child"
+            >
+              <Tags
+                // value={tags}
+                tags={this.state.tags}
+                handleDelete={this.handleDelete}
+                handleAddition={this.handleAddition}
+                handleDrag={this.handleDrag}
               // onChange={this.update('tags')}
               // update={this.update()}
-            />
+              />
+            </div>
+            
           </form>
           <div className="button-holder new-post-form-child">
             <button
