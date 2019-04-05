@@ -1213,7 +1213,7 @@ var options = [{
   label: 'Title'
 }, {
   value: 'description',
-  label: 'description'
+  label: 'Description'
 }];
 
 var PostIndex =
@@ -1229,7 +1229,8 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PostIndex).call(this, props));
     _this.state = {
       search: "",
-      selectedOption: "title"
+      selectedOption: "title",
+      category: null
     }; // this.state = {search_param: ""}
 
     return _this;
@@ -1267,15 +1268,19 @@ function (_React$Component) {
           deletePost = _this$props.deletePost;
       var _this$state = this.state,
           search = _this$state.search,
-          selectedOption = _this$state.selectedOption; // const categorizedPosts = posts.filter(post => {
-      //   if (selectedOption == "title") {
-      //     // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-      //     if (post.categories != undefined) {
-      //       return post.categories.indexOf(search.toLowerCase()) !== -1;
-      //     }
-      // }
-
-      var filteredPosts = posts.filter(function (post) {
+          selectedOption = _this$state.selectedOption,
+          category = _this$state.category;
+      var categorizedPosts = posts.filter(function (post) {
+        if (category == null || undefined) {
+          return post;
+        } else {
+          // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+          if (post.categories != undefined) {
+            return post.categories.indexOf(category.toLowerCase()) !== -1;
+          }
+        }
+      });
+      var filteredPosts = categorizedPosts.filter(function (post) {
         if (selectedOption == "title") {
           return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
         }
@@ -1294,6 +1299,12 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "posts-copy"
       }, "Search here to find courses to start learning for your new career or to improve your skills at your current job. Vote for any recources you think have value and post any courses you have found to help others know what could help them get to that next stage of their careers."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        label: "Search Post",
+        placeholder: "Categories",
+        icon: "search",
+        className: "posts-search-field",
+        onChange: this.update("category")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
         placeholder: "Search for a post here...",
         icon: "search",

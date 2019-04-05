@@ -7,13 +7,13 @@ import Select from 'react-select';
 
 const options = [
   { value: 'title', label: 'Title' },
-  { value: 'description', label: 'description' }
+  { value: 'description', label: 'Description' }
 ];
 
 class PostIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { search: "", selectedOption: "title" };
+    this.state = { search: "", selectedOption: "title", category: null };
     // this.state = {search_param: ""}
   }
 
@@ -37,28 +37,42 @@ class PostIndex extends React.Component {
 
   render() {
     const { posts, updatePost, deletePost } = this.props;
-    const { search, selectedOption } = this.state;
-    // const categorizedPosts = posts.filter(post => {
-    //   if (selectedOption == "title") {
-    //     // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-    //     if (post.categories != undefined) {
-    //       return post.categories.indexOf(search.toLowerCase()) !== -1;
+    const { search, selectedOption, category } = this.state;
+    const categorizedPosts = posts.filter(post => {
+      if (category == null || undefined ) {
+      return (
+        post
+      );
+    } 
+    else {
 
-    //     }
 
-      // }
-    const filteredPosts = posts.filter(post => {
+        // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+
+        if (post.categories != undefined) {
+          return (
+            post.categories.indexOf(category.toLowerCase()) !== -1
+            );
+        }
+      
+        }});
+
+    const filteredPosts = categorizedPosts.filter(post => {
       if (selectedOption == "title") {
-        return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-
+        return (
+          post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
+        );
       }
       if (selectedOption == "description") {
         return (
-          post.description.toLowerCase().indexOf(search.toLowerCase()) !== -1
+          post.description.toLowerCase().indexOf(search.toLowerCase()) !==
+          -1
         );
       }
     });
     const sortedPosts = filteredPosts.sort((a, b) => b.votes - a.votes);
+
+
     return (
       <div>
         <div className="navbar-spacer" />
@@ -71,6 +85,13 @@ class PostIndex extends React.Component {
             careers.
           </h2>
           <div>
+            <input
+              label="Search Post"
+              placeholder="Categories"
+              icon="search"
+              className="posts-search-field"
+              onChange={this.update("category")}
+            />
             <input
               label="Search Post"
               placeholder="Search for a post here..."
