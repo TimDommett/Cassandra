@@ -16,9 +16,19 @@
     "react-tag-input": "^6.4.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-logger": "^3.0.6",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --mode=development --watch"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -26,10 +36,6 @@
   "directories": {
     "lib": "lib",
     "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
   },
   "repository": {
     "type": "git",
