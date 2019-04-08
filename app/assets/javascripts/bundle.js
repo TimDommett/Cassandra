@@ -951,11 +951,11 @@ __webpack_require__.r(__webpack_exports__);
   }, "Cassandra")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "navbar-navigation"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "dropdown nav-bar-child"
+    "class": "dropdown nav-bar-child"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    class: "dropbtn"
+    "class": "dropbtn"
   }, "Categories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "dropdown-content"
+    "class": "dropdown-content"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -1447,7 +1447,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "filtering"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        class: "cntr"
+        "class": "cntr"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
         placeholder: "Categories",
@@ -1455,75 +1455,75 @@ function (_React$Component) {
         className: "category-search-field",
         onChange: this.update("category")
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt1",
-        class: "radio"
+        "for": "opt1",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt1",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "Software Developement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt2",
-        class: "radio"
+        "for": "opt2",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt2",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt3",
-        class: "radio"
+        "for": "opt3",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt3",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt4",
-        class: "radio"
+        "for": "opt4",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt4",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "Whatever"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt2",
-        class: "radio"
+        "for": "opt2",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt2",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt3",
-        class: "radio"
+        "for": "opt3",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt3",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        for: "opt4",
-        class: "radio"
+        "for": "opt4",
+        "class": "radio"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
         name: "rdo",
         id: "opt4",
-        class: "hidden"
+        "class": "hidden"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        class: "label"
+        "class": "label"
       }), "Whatever"))), postsExist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-new-post "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
@@ -2856,30 +2856,20 @@ var _nullSession = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ "./node_modules/redux-devtools-extension/index.js");
-/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducers_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/root */ "./frontend/reducers/root.js");
-/* harmony import */ var _thunk_thunk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../thunk/thunk */ "./frontend/thunk/thunk.js");
+/* harmony import */ var _reducers_root__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root */ "./frontend/reducers/root.js");
+/* harmony import */ var _thunk_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../thunk/thunk */ "./frontend/thunk/thunk.js");
 
 
 
-
-
-var middlewares = [_thunk_thunk__WEBPACK_IMPORTED_MODULE_4__["default"]];
-
-if (true) {
-  // must use 'require' (import only allowed at top of file)
-  var _require = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js"),
-      _logger = _require.logger;
-
-  middlewares.push(_logger);
-}
+var middlewares = [_thunk_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]]; // if (process.env.NODE_ENV !== 'production') {
+//   // must use 'require' (import only allowed at top of file)
+//   const { logger } = require('redux-logger');
+//   middlewares.push(logger);
+// }
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"].apply(void 0, middlewares));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"].apply(void 0, middlewares));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
@@ -16346,7 +16336,7 @@ var dnd_core_1 = __webpack_require__(/*! dnd-core */ "./node_modules/dnd-core/li
 var checkDecoratorArguments_1 = __webpack_require__(/*! ./utils/checkDecoratorArguments */ "./node_modules/react-dnd/lib/cjs/utils/checkDecoratorArguments.js");
 var isRefable_1 = __webpack_require__(/*! ./utils/isRefable */ "./node_modules/react-dnd/lib/cjs/utils/isRefable.js");
 var invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
-var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 /**
  * Create the React Context
  */
@@ -16452,7 +16442,7 @@ var checkDecoratorArguments_1 = __webpack_require__(/*! ./utils/checkDecoratorAr
 var DragDropContext_1 = __webpack_require__(/*! ./DragDropContext */ "./node_modules/react-dnd/lib/cjs/DragDropContext.js");
 var isRefable_1 = __webpack_require__(/*! ./utils/isRefable */ "./node_modules/react-dnd/lib/cjs/utils/isRefable.js");
 var discount_lodash_1 = __webpack_require__(/*! ./utils/discount_lodash */ "./node_modules/react-dnd/lib/cjs/utils/discount_lodash.js");
-var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 var invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
 var shallowEqual = __webpack_require__(/*! shallowequal */ "./node_modules/shallowequal/index.js");
 function DragLayer(collect, options) {
@@ -17389,7 +17379,7 @@ var disposables_1 = __webpack_require__(/*! ./utils/disposables */ "./node_modul
 var isRefable_1 = __webpack_require__(/*! ./utils/isRefable */ "./node_modules/react-dnd/lib/cjs/utils/isRefable.js");
 var discount_lodash_1 = __webpack_require__(/*! ./utils/discount_lodash */ "./node_modules/react-dnd/lib/cjs/utils/discount_lodash.js");
 var invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
-var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+var hoistStatics = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 var shallowEqual = __webpack_require__(/*! shallowequal */ "./node_modules/shallowequal/index.js");
 function decorateHandler(_a) {
     var DecoratedComponent = _a.DecoratedComponent, createHandler = _a.createHandler, createMonitor = _a.createMonitor, createConnector = _a.createConnector, registerHandler = _a.registerHandler, containerDisplayName = _a.containerDisplayName, getType = _a.getType, collect = _a.collect, options = _a.options;
@@ -18490,17 +18480,6 @@ function wrapConnectorHooks(hooks) {
 }
 exports.default = wrapConnectorHooks;
 
-
-/***/ }),
-
-/***/ "./node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
-/*!*********************************************************************************************************!*\
-  !*** ./node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
-  \*********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/timdommett/Desktop/Coding/Final Projects/Cassandra/node_modules/react-dnd/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js'");
 
 /***/ }),
 
@@ -40689,7 +40668,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 /* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
 /* harmony import */ var invariant__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_5__);
@@ -41503,17 +41482,6 @@ function warning(message) {
   /* eslint-enable no-empty */
 
 }
-
-/***/ }),
-
-/***/ "./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
-/*!***********************************************************************************************************!*\
-  !*** ./node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/timdommett/Desktop/Coding/Final Projects/Cassandra/node_modules/react-redux/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js'");
 
 /***/ }),
 
@@ -43198,7 +43166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 /* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Route__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Route */ "./node_modules/react-router/es/Route.js");
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -43240,6 +43208,86 @@ var withRouter = function withRouter(Component) {
 
 /***/ }),
 
+/***/ "./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js":
+/*!************************************************************************************************************!*\
+  !*** ./node_modules/react-router/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+var REACT_STATICS = {
+    childContextTypes: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = getPrototypeOf && getPrototypeOf(Object);
+
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') { // don't hoist over string (html) components
+
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) {
+                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+            }
+        }
+
+        var keys = getOwnPropertyNames(sourceComponent);
+
+        if (getOwnPropertySymbols) {
+            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+
+        for (var i = 0; i < keys.length; ++i) {
+            var key = keys[i];
+            if (!REACT_STATICS[key] && !KNOWN_STATICS[key] && (!blacklist || !blacklist[key])) {
+                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+                try { // Avoid failures from read-only properties
+                    defineProperty(targetComponent, key, descriptor);
+                } catch (e) {}
+            }
+        }
+
+        return targetComponent;
+    }
+
+    return targetComponent;
+}
+
+module.exports = hoistNonReactStatics;
+
+
+/***/ }),
+
 /***/ "./node_modules/react-select/dist/react-select.esm.js":
 /*!************************************************************!*\
   !*** ./node_modules/react-select/dist/react-select.esm.js ***!
@@ -43262,7 +43310,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultTheme", function() { return defaultTheme; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var memoize_one__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! memoize-one */ "./node_modules/memoize-one/dist/memoize-one.esm.js");
+/* harmony import */ var memoize_one__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! memoize-one */ "./node_modules/react-select/node_modules/memoize-one/dist/memoize-one.esm.js");
 /* harmony import */ var emotion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! emotion */ "./node_modules/emotion/dist/index.esm.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_3__);
@@ -48558,6 +48606,63 @@ var index$1 = manageState(Select);
 
 /* harmony default export */ __webpack_exports__["default"] = (index$1);
 
+
+
+/***/ }),
+
+/***/ "./node_modules/react-select/node_modules/memoize-one/dist/memoize-one.esm.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-select/node_modules/memoize-one/dist/memoize-one.esm.js ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function areInputsEqual(newInputs, lastInputs) {
+  if (newInputs.length !== lastInputs.length) {
+    return false;
+  }
+
+  for (var i = 0; i < newInputs.length; i++) {
+    if (newInputs[i] !== lastInputs[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function index (resultFn, isEqual) {
+  if (isEqual === void 0) {
+    isEqual = areInputsEqual;
+  }
+
+  var lastThis;
+  var lastArgs = [];
+  var lastResult;
+  var calledOnce = false;
+
+  var result = function result() {
+    for (var _len = arguments.length, newArgs = new Array(_len), _key = 0; _key < _len; _key++) {
+      newArgs[_key] = arguments[_key];
+    }
+
+    if (calledOnce && lastThis === this && isEqual(newArgs, lastArgs)) {
+      return lastResult;
+    }
+
+    lastResult = resultFn.apply(this, newArgs);
+    calledOnce = true;
+    lastThis = this;
+    lastArgs = newArgs;
+    return lastResult;
+  };
+
+  return result;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
 
 
 /***/ }),
@@ -53969,49 +54074,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react/cjs/react.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/redux-devtools-extension/index.js":
-/*!********************************************************!*\
-  !*** ./node_modules/redux-devtools-extension/index.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var compose = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js").compose;
-
-exports.__esModule = true;
-exports.composeWithDevTools = (
-  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :
-    function() {
-      if (arguments.length === 0) return undefined;
-      if (typeof arguments[0] === 'object') return compose;
-      return compose.apply(null, arguments);
-    }
-);
-
-exports.devToolsEnhancer = (
-  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION__ :
-    function() { return function(noop) { return noop; } }
-);
-
-
-/***/ }),
-
-/***/ "./node_modules/redux-logger/dist/redux-logger.js":
-/*!********************************************************!*\
-  !*** ./node_modules/redux-logger/dist/redux-logger.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/timdommett/Desktop/Coding/Final Projects/Cassandra/node_modules/redux-logger/dist/redux-logger.js'");
 
 /***/ }),
 
