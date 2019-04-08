@@ -176,6 +176,8 @@
 
 
 .search-home {
+    font-family: 'Ovo', serif;
+    font-size: small;
   width: 30%;
   margin-top: 8%;
   display: flex;

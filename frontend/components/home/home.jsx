@@ -38,7 +38,7 @@ class HomePage extends React.Component {
     <h1 className="home-copy-title">Created as a testament to the power of free education.</h1>
     <h2 className="home-copy">Come learn, share and make the world a better place by making access to information and education free for everyone.</h2>
     <form onSubmit={this.redirect}>
-        <input label="Search home" placeholder="Search for free courses here by typing in the subject you want to learn..." icon="search" className="search-home"
+        <input label="Search home" placeholder="Search for free courses here..." icon="search" className="search-home"
           onChange={this.update("search")} >
       </input>
     </form>
