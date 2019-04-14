@@ -889,7 +889,7 @@ function (_React$Component) {
         onSubmit: this.redirect
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search home",
-        placeholder: "Search for free courses here by typing in the subject you want to learn...",
+        placeholder: "Search for free courses here...",
         icon: "search",
         className: "search-home",
         onChange: this.update("search")
@@ -1206,7 +1206,7 @@ function (_React$Component) {
         className: ""
       }, "Link:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: post.link
-      }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, post.categories), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, " ", " " + post.link), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: destroyPost
       }, "Delete Post"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_comment_list_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2442,7 +2442,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // console.log(this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form fade-in"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
