@@ -26,8 +26,8 @@ export default ({ currentUser, logout }) => {
           <button class="dropbtn">Categories</button>
           <div class="dropdown-content">
             <a href="#"><Link  to={{ pathname: '/posts', state: { category: 'Software Development' } }}>Software Development</Link></a>
-          <a href="#">Economics</a>
-            <a href="#"><Link to={{ pathname: '/posts', state: { category: 'two' } }}>two</Link></a>
+            <a href="#"><Link to={{ pathname: '/posts', state: { category: 'Economics' } }}>Economics</Link></a>
+            <a href="#"><Link to={{ pathname: '/posts', state: { category: 'Mathematics' } }}>Mathematics</Link></a>
             <a href="#"><Link to={{ pathname: '/posts', state: { category: '' } }}>All Categories</Link></a>
         </div>
       </div>
