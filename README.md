@@ -1,24 +1,32 @@
-# README
+Cassandra attempts to give more equal access to information and educational recourses for all. (essentially an online educational recourses hub).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Production Timeline:**
 
-Things you may want to cover:
+**1. Created frontend User Authentication. New account creation and login. (11/03/2019, 2 days)**
 
-* Ruby version
+* Users can sign up, sign in, log out
+* Users can't use certain features without logging in (creating posts, voting and commenting)
 
-* System dependencies
+**2. Posts (13/03/2019, 2 days)**
 
-* Configuration
+* Logged in users can create posts
+* Users can view a list posts
+* Logged in users can comment on posts
 
-* Database creation
+**3. Voting (15/03/2019, 1 day)**
 
-* Database initialization
+* Logged in users can vote for posts
+* posts are sorted by number of votes
+* The vote count is displayed for each posts
 
-* How to run the test suite
+**4. Uploading of images (23/03/2019, 1 day)**
 
-* Services (job queues, cache servers, search engines, etc.)
+* Enabled uploading of images for posts with AWS
+* Displaying of uploaded image for each post 
 
-* Deployment instructions
+**5. Categorisation for filtering and searching (05/04/2019, 1 day)**
 
-* ...
+* Enabled adding multiple categories when creating a post
+* Enabled filtering and cross page searching for posts by category or title
+
+**6. Production README (15/04/2019, 0.5 days)**
