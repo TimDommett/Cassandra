@@ -6,7 +6,7 @@ Cassandra attempts to give more equal access to information and educational reco
 1. Searchability
 
 * Adding categories to posts enables quick searching and filtering of posts by category or title.
-* Cross page searching sends updates the state of the posts page, when redirected, with the search entered into the home searchbar enabling searching from any page.
+* Cross page searching sends state between components, when redirected to another page, with the search entered into the home searchbar enabling searching from any page.
 
 2. Voting
 
