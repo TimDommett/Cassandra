@@ -19,7 +19,7 @@ Cassandra attempts to give more equal access to information and educational reco
 4. Frontend Authentication
 
 * enables the password to never be sent between the client and server, therefore maintaining security, only the password digest that has been encrypted using bcrypt will ever be sent to the server. 
-*Persistent login using session controllers/tokens
+* Persistent login using session controllers/tokens
 
 
 
