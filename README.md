@@ -1,5 +1,6 @@
 Cassandra attempts to give more equal access to information and educational recourses for all. (essentially an online educational recourses hub).
 
+
 **Major Features:**
 1. Searchability
 
@@ -16,6 +17,7 @@ Cassandra attempts to give more equal access to information and educational reco
 4. Frontend Authentication
 *enables the password to never be sent between the client and server, therefore maintaining security, only the password digest that has been encrypted using bcrypt will ever be sent to the server. 
 *Persistent login using session controllers/tokens
+
 
 
 
