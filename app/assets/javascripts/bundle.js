@@ -1452,6 +1452,18 @@ function (_React$Component) {
         onChange: this.update("selectedOption"),
         options: options
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onChange: this.update("category")
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        className: "post-search-by",
+        value: "Software Development",
+        name: "category"
+      }), " Software Development", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        className: "post-search-by",
+        value: "Economics",
+        name: "category"
+      }), " Economics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "filtering"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "cntr"
