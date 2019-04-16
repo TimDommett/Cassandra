@@ -461,6 +461,7 @@ padding-left: 10px;
   bottom: 20px;
   border: 1px solid black;
   color: white;
+  left: 50%;
 }
 
 /* Need to create spacer at bottom if new post is open */
