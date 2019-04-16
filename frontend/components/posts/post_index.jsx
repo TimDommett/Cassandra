@@ -142,6 +142,10 @@ class PostIndex extends React.Component {
             onChange={this.update("selectedOption")}
             options={options}
           />
+          <div onChange={this.update("category")}>
+            <input type="radio" className="post-search-by" value="Software Development" name="category" /> Software Development
+        <input type="radio" className="post-search-by" value="Economics" name="category" /> Economics
+      </div>
 
           <div className="filtering">
             
