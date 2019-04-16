@@ -142,14 +142,11 @@ class PostIndex extends React.Component {
             onChange={this.update("selectedOption")}
             options={options}
           />
-          <div onChange={this.update("category")}>
-            <input type="radio" className="post-search-by" value="Software Development" name="category" /> Software Development
-        <input type="radio" className="post-search-by" value="Economics" name="category" /> Economics
-      </div>
+
 
           <div className="filtering">
             
-            <div class="cntr">
+            <div class="cntr" onChange={this.update("category")}>
               <input
                 label="Search Post"
                 placeholder="Categories"
@@ -158,41 +155,17 @@ class PostIndex extends React.Component {
                 onChange={this.update("category")}
               />
 
+             
+              <input type="radio" value="Software Development" name="category" class="radio"/> Software Development
+              <input type="radio" className="post-search-by" value="Economics" name="category" class="radio"/> Economics
+              <input type="radio" className="post-search-by" value="Mathematics" name="category" class="radio" /> Mathematics
+              <input type="radio" className="post-search-by" value="Degrees" name="category" class="radio" /> Degrees
+              <input type="radio" className="post-search-by" value="Science" name="category" class="radio" /> Science
+              <input type="radio" className="post-search-by" value="Coding" name="category" class="radio" /> Coding
+              <input type="radio" className="post-search-by" value="All Categories" name="category" class="radio" /> All Categories
 
-              <label for="opt1" class="radio">
-                <input type="radio" name="rdo" id="opt1" class="hidden" />
-                <span class="label" />Software Developement
-              </label>
 
-              <label for="opt2" class="radio">
-                <input type="radio" name="rdo" id="opt2" class="hidden" />
-                <span class="label" />two
-              </label>
-
-              <label for="opt3" class="radio">
-                <input type="radio" name="rdo" id="opt3" class="hidden" />
-                <span class="label" />more
-              </label>
-
-              <label for="opt4" class="radio">
-                <input type="radio" name="rdo" id="opt4" class="hidden" />
-                <span class="label" />Whatever
-              </label>
-
-              <label for="opt2" class="radio">
-                <input type="radio" name="rdo" id="opt2" class="hidden" />
-                <span class="label" />two
-              </label>
-
-              <label for="opt3" class="radio" >
-                <input type="radio" name="rdo" id="opt3" class="hidden"  />
-                <span class="label" />more
-              </label>
-
-              <label for="opt4" class="radio">
-                <input type="radio" name="rdo" id="opt4" class="hidden" />
-                <span class="label" />Whatever
-              </label>
+ 
             </div>
           </div>
 

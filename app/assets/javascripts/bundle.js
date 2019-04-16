@@ -1452,98 +1452,58 @@ function (_React$Component) {
         onChange: this.update("selectedOption"),
         options: options
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onChange: this.update("category")
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "radio",
-        className: "post-search-by",
-        value: "Software Development",
-        name: "category"
-      }), " Software Development", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "radio",
-        className: "post-search-by",
-        value: "Economics",
-        name: "category"
-      }), " Economics"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "filtering"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "cntr"
+        "class": "cntr",
+        onChange: this.update("category")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         label: "Search Post",
         placeholder: "Categories",
         icon: "search",
         className: "category-search-field",
         onChange: this.update("category")
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt1",
-        "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt1",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "Software Developement"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt2",
+        value: "Software Development",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Software Development", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt2",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt3",
+        className: "post-search-by",
+        value: "Economics",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Economics", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt3",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt4",
+        className: "post-search-by",
+        value: "Mathematics",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Mathematics", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt4",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "Whatever"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt2",
+        className: "post-search-by",
+        value: "Degrees",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Degrees", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt2",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "two"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt3",
+        className: "post-search-by",
+        value: "Science",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Science", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt3",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "more"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        "for": "opt4",
+        className: "post-search-by",
+        value: "Coding",
+        name: "category",
         "class": "radio"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Coding", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
-        name: "rdo",
-        id: "opt4",
-        "class": "hidden"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "class": "label"
-      }), "Whatever"))), postsExist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "post-search-by",
+        value: "All Categories",
+        name: "category",
+        "class": "radio"
+      }), " All Categories")), postsExist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-new-post "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
         className: "new_post_btn border-inset",
