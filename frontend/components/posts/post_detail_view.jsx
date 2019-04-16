@@ -12,21 +12,12 @@ class PostDetailView extends React.Component {
 
   render() {
     const { post, destroyPost, updatePost } = this.props;
-    // const { votePost, unVotePost } = post => {
-    //   let voteButtonText = "You don't like this.";
-    //   let voteButtonAction = () => votePost(post.id);
-    //   if (post.voted_by_current_user) {
-    //     voteButtonText = "You like this";
-    //     voteButtonAction = () => unVotePost(post.id);
-    //   }
 
-    // };
     return(
       <div className="fade-in todo-list-item-child">
         <p className="post-detail">{post.description}</p>
         <label className="">Link:</label>
         <a href={post.link}> {" " + post.link}</a>
-        {/* <p>{post.categories}</p> */}
         <br></br>
         <button className="delete-btn" onClick={ destroyPost }>
           Delete Post

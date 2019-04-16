@@ -10,7 +10,6 @@ export const createComment = commentForm => (
     method: 'POST',
     url: `/api/comments`,
     data: commentForm,
-    // user: current_user,
     contentType: false,
     processData: false
   })

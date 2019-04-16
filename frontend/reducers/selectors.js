@@ -1,5 +1,4 @@
 export const allPosts = ({ posts }) => Object.keys(posts).map(id => posts[id]);
-// comments is undefined is the problem
 export const commentsByPostId = ({ comments }, post_id) => {
   const commentsByPostId = [];
   Object.keys(comments).forEach(commentID => {

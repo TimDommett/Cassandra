@@ -56,8 +56,7 @@ class PostForm extends React.Component {
   handleAddition(tag) {
     this.setState(state => ({ tags: [...state.tags, tag] }));
     const current_ind = this.state.tags.length;
-    // console.log(this.state.tags[current_ind - 1].text);
-    // this.props.update(tags)
+
   }
 
   handleDrag(tag, currPos, newPos) {
@@ -66,42 +65,30 @@ class PostForm extends React.Component {
 
     newTags.splice(currPos, 1);
     newTags.splice(newPos, 0, tag);
-
-    // re-render
     this.setState({ tags: newTags });
   }
 
-  // This will be where we create our form data to submit our photo
   handleSubmit(e) {
     e.preventDefault();
-    // try while function
-    // console.log(this.state.tags);
-          // const categories = [];
+
 
     this.state.tags.map(
       tag =>
-        // this.state.categories.push(tag[index].text)
-        // categories = [],
-        // const word = tag.text;
+
         this.state.categories.push(tag.text.toLowerCase())
-      // categories.push(tag.text),
-      //   console.log(categories)
+ 
     );
     const formData = new FormData();
     formData.append('post[title]', this.state.title);
     formData.append('post[description]', this.state.description);
     formData.append('post[link]', this.state.link);
-    // formData.append('post[tags]', this.state.tags);
     formData.append("post[categories]", this.state.categories);
-    // add our coordinates
-    // formData.append('post[lat]', this.coords['lat']);
-    // formData.append('bench[lng]', this.coords['lng']);
+
 
     if (this.state.photoFile) {
       formData.append('post[photo]', this.state.photoFile);
     }
-    // This will fail because we do not have a AWS bucket set up for this project
-    // presently.
+  
     this.props.newPost(formData);
     this.navigateToPosts();
   }
@@ -163,13 +150,10 @@ class PostForm extends React.Component {
             <div className="post-field-categories new-post-form-child"
             >
               <Tags
-                // value={tags}
                 tags={this.state.tags}
                 handleDelete={this.handleDelete}
                 handleAddition={this.handleAddition}
                 handleDrag={this.handleDrag}
-              // onChange={this.update('tags')}
-              // update={this.update()}
               />
             </div>
             

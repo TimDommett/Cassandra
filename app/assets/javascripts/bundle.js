@@ -276,12 +276,7 @@ var receiveCurrentUser = function receiveCurrentUser(user) {
     type: RECIEVE_CURRENT_USER,
     user: user
   };
-}; // const user = {
-//   id: 1,
-//   username: "",
-//   email: ""
-// }
-
+};
 
 var logoutCurrentUser = function logoutCurrentUser() {
   return {
@@ -344,8 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 
-  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState); // const store = createStore();
-
+  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
   }), root);
@@ -437,7 +431,7 @@ __webpack_require__.r(__webpack_exports__);
     path: "/posts/new",
     component: _posts_form_post_form_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }));
-}); // <Route path="/posts/:post_id/comments" component={CommentListContainer} />
+});
 
 /***/ }),
 
@@ -490,10 +484,7 @@ function (_React$Component) {
     _this.state = {
       comment: "",
       post_id: _this.props.post_id,
-      user_id: currentUser.id // user_id: this.state.currentUser
-      // user_id: user_id,
-      // post_id: post_id,
-
+      user_id: currentUser.id
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -507,49 +498,20 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
-    } // handleSubmit(e) {
-    //   e.preventDefault();
-    //   const comment = Object.assign({}, this.state);
-    //   this.props.createComment(this.props.post_id, comment).then(
-    //     this.setState({
-    //       comment: "",
-    //     }) // reset form
-    //   );
-    // }
-    // navigateToComments() {
-    //   this.props.history.push('/posts');
-    // }
-
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); // const post_id = parseInt(this.props.match.params.post_id);
-      // const comment = Object.assign({}, this.state, {
-      //   post_id: post_id
-      // });
-
+      e.preventDefault();
       var commentForm = new FormData();
       commentForm.append('comment[comment]', this.state.comment);
       commentForm.append('comment[post_id]', this.state.post_id);
-      commentForm.append('comment[user_id]', this.state.user_id); // commentForm.append('post[description]', this.state.description);
-      // commentForm.append('post[link]', this.state.link);
-      // commentForm.append('post[tags]', this.state.tags);
-      //   // add our coordinates
-      //   // formData.append('post[lat]', this.coords['lat']);
-      //   // formData.append('bench[lng]', this.coords['lng']);
-      //
-      //   // if (this.state.photoFile) {
-      //   //   formData.append('bench[photo]', this.state.photoFile);
-      //   // }
-      //   // This will fail because we do not have a AWS bucket set up for this project
-      //   // presently.
-
-      this.props.newComment(commentForm); // this.setState({ state: this.state });
+      commentForm.append('comment[user_id]', this.state.user_id);
+      this.props.newComment(commentForm);
     }
   }, {
     key: "render",
     value: function render() {
-      // const { comment, post_id, user_id} = this.state;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "comment-form",
         onSubmit: this.handleSubmit
@@ -733,13 +695,7 @@ function (_React$Component) {
     _classCallCheck(this, CommentListItem);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(CommentListItem).call(this, props)); // this.toggleComment = this.toggleComment.bind(this);
-  } // toggleComment(e) {
-  //   const toggledComment = merge({}, this.props.comment, {
-  //     done: !this.props.step.done
-  //   });
-  //   this.props.updateStep(toggledStep);
-  // }
-
+  }
 
   _createClass(CommentListItem, [{
     key: "render",
@@ -1019,7 +975,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session */ "./frontend/actions/session.js");
 
 
- // Comment this back in after you have built the login functionality
 
 
 
@@ -1035,10 +990,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session__WEBPACK_IMPORTED_MODULE_3__["logout"])());
     }
   };
-}; // Comment this out when you have built the login functionality
-// const mapStateToProps = null;
-// const mapDispatchToProps = null;
-
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(_nav_bar__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
@@ -1196,15 +1148,7 @@ function (_React$Component) {
       var _this$props = this.props,
           post = _this$props.post,
           destroyPost = _this$props.destroyPost,
-          updatePost = _this$props.updatePost; // const { votePost, unVotePost } = post => {
-      //   let voteButtonText = "You don't like this.";
-      //   let voteButtonAction = () => votePost(post.id);
-      //   if (post.voted_by_current_user) {
-      //     voteButtonText = "You like this";
-      //     voteButtonAction = () => unVotePost(post.id);
-      //   }
-      // };
-
+          updatePost = _this$props.updatePost;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fade-in todo-list-item-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1335,8 +1279,7 @@ function (_React$Component) {
       search: "",
       selectedOption: "title",
       category: null
-    }; // this.state = {search_param: ""}
-
+    };
     _this.clearSearch = _this.clearSearch.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1370,9 +1313,7 @@ function (_React$Component) {
       this.setState({
         category: ""
       });
-    } // Need to create dropdown so can change what you are filtering by
-    // filtered = posts.map post.categories.include(search)     - both .toLowerCase()     -give suggestions.
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1390,7 +1331,6 @@ function (_React$Component) {
         if (!category) {
           return post;
         } else {
-          // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
           if (post.categories != undefined) {
             return post.categories.indexOf(category.toLowerCase()) !== -1;
           }
@@ -1501,7 +1441,7 @@ function (_React$Component) {
         type: "radio",
         className: "post-search-by",
         value: "All Categories",
-        name: "category",
+        name: "",
         "class": "radio"
       }), " All Categories")), postsExist), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-new-post "
@@ -1634,10 +1574,7 @@ function (_React$Component) {
     _this.state = {
       description: false
     };
-    _this.toggleDetail = _this.toggleDetail.bind(_assertThisInitialized(_this)); // this.handleDelete = this.handleDelete.bind(this)
-    // this.deletePost = this.deletePost.bind(this)
-    // this.toggleTodo = this.toggleTodo.bind(this);
-
+    _this.toggleDetail = _this.toggleDetail.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1646,17 +1583,9 @@ function (_React$Component) {
     value: function toggleDetail(e) {
       e.preventDefault();
       this.setState({
-        description: !this.state.description // post_id: this.state.id
-
+        description: !this.state.description
       });
-    } // toggleTodo(e) {
-    //   e.preventDefault();
-    //   const toggledTodo = merge({}, this.props.todo, {
-    //      done: !this.props.todo.done
-    //    });
-    //    this.props.updateTodo(toggledTodo);
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1692,21 +1621,7 @@ function (_React$Component) {
   }]);
 
   return PostItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // const PostItem = ({ post }) => {
-// let likeButtonText = "You don't like this.";
-// let likeButtonAction = () => likePost(post.id);
-// if (post.liked_by_current_user) {
-//   likeButtonText = "You like this";
-//   likeButtonAction = () => unLikePost(post.id);
-// }
-//   return (
-//     <li>
-//       <h3>{post.title}</h3>
-//       <ul>{post.description}</ul>
-//     </li>
-//   );
-// }
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PostItem);
 
@@ -1766,7 +1681,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Tags).call(this, props));
     _this.state = {
-      // tags: this.props.tags,
       suggestions: [{
         id: 'Software Development',
         text: 'Software Development'
@@ -1783,30 +1697,9 @@ function (_React$Component) {
         id: 'Economics',
         text: 'Economics'
       }]
-    }; // this.handleDelete = this.handleDelete.bind(this);
-    // this.handleAddition = this.handleAddition.bind(this);
-    // this.handleDrag = this.handleDrag.bind(this);
-
+    };
     return _this;
-  } // handleDelete(i) {
-  //     const { tags } = this.state;
-  //     this.setState({
-  //      tags: tags.filter((tag, index) => index !== i),
-  //     });
-  // }
-  // handleAddition(tag) {
-  //     this.setState(state => ({ tags: [...state.tags, tag] }));
-  //     // this.props.update(tags)
-  // }
-  // handleDrag(tag, currPos, newPos) {
-  //     const tags = [...this.state.tags];
-  //     const newTags = tags.slice();
-  //     newTags.splice(currPos, 1);
-  //     newTags.splice(newPos, 0, tag);
-  //     // re-render
-  //     this.setState({ tags: newTags });
-  // }
-
+  }
 
   _createClass(Tags, [{
     key: "render",
@@ -1878,13 +1771,10 @@ function (_React$Component) {
 
     _classCallCheck(this, PostForm);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props)); // this.coords = { lat: props.lat, lng: props.lng };
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostForm).call(this, props));
     _this.state = {
       title: '',
-      description: '' // photoFile: null,
-      // photoUrl: null
-
+      description: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.navigateToPosts = _this.navigateToPosts.bind(_assertThisInitialized(_this));
@@ -1904,33 +1794,14 @@ function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
-    } // handleFile(e) {
-    //   const file = e.currentTarget.files[0];
-    //   const fileReader = new FileReader();
-    //   fileReader.onloadend = () => {
-    //     this.setState({ photoFile: file, photoUrl: fileReader.result });
-    //   };
-    //   if (file) {
-    //     fileReader.readAsDataURL(file);
-    //   }
-    // }
-    // This will be where we create our form data to submit our photo
-
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
       var formData = new FormData();
       formData.append('post[title]', this.state.title);
-      formData.append('post[description]', this.state.description); // add our coordinates
-      // formData.append('post[lat]', this.coords['lat']);
-      // formData.append('bench[lng]', this.coords['lng']);
-      // if (this.state.photoFile) {
-      //   formData.append('bench[photo]', this.state.photoFile);
-      // }
-      // This will fail because we do not have a AWS bucket set up for this project
-      // presently.
-
+      formData.append('post[description]', this.state.description);
       this.props.updatePost(formData);
       this.navigateToPosts();
     }
@@ -1939,9 +1810,7 @@ function (_React$Component) {
     value: function render() {
       var _this$state = this.state,
           title = _this$state.title,
-          description = _this$state.description; // const { lat, lng } = this.coords;
-      // const preview = this.state.photoUrl ? <img height="200px" width="200px" src={this.state.photoUrl} /> : null;
-
+          description = _this$state.description;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-post-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2149,8 +2018,7 @@ function (_React$Component) {
           tags: [].concat(_toConsumableArray(state.tags), [tag])
         };
       });
-      var current_ind = this.state.tags.length; // console.log(this.state.tags[current_ind - 1].text);
-      // this.props.update(tags)
+      var current_ind = this.state.tags.length;
     }
   }, {
     key: "handleDrag",
@@ -2159,45 +2027,29 @@ function (_React$Component) {
 
       var newTags = tags.slice();
       newTags.splice(currPos, 1);
-      newTags.splice(newPos, 0, tag); // re-render
-
+      newTags.splice(newPos, 0, tag);
       this.setState({
         tags: newTags
       });
-    } // This will be where we create our form data to submit our photo
-
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this4 = this;
 
-      e.preventDefault(); // try while function
-      // console.log(this.state.tags);
-      // const categories = [];
-
+      e.preventDefault();
       this.state.tags.map(function (tag) {
-        return (// this.state.categories.push(tag[index].text)
-          // categories = [],
-          // const word = tag.text;
-          _this4.state.categories.push(tag.text.toLowerCase())
-        );
-      } // categories.push(tag.text),
-      //   console.log(categories)
-      );
+        return _this4.state.categories.push(tag.text.toLowerCase());
+      });
       var formData = new FormData();
       formData.append('post[title]', this.state.title);
       formData.append('post[description]', this.state.description);
-      formData.append('post[link]', this.state.link); // formData.append('post[tags]', this.state.tags);
-
-      formData.append("post[categories]", this.state.categories); // add our coordinates
-      // formData.append('post[lat]', this.coords['lat']);
-      // formData.append('bench[lng]', this.coords['lng']);
+      formData.append('post[link]', this.state.link);
+      formData.append("post[categories]", this.state.categories);
 
       if (this.state.photoFile) {
         formData.append('post[photo]', this.state.photoFile);
-      } // This will fail because we do not have a AWS bucket set up for this project
-      // presently.
-
+      }
 
       this.props.newPost(formData);
       this.navigateToPosts();
@@ -2259,14 +2111,11 @@ function (_React$Component) {
         className: "post-field-tags new-post-form-child"
       }, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-field-categories new-post-form-child"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"] // value={tags}
-      , {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_posts_tags__WEBPACK_IMPORTED_MODULE_2__["default"], {
         tags: this.state.tags,
         handleDelete: this.handleDelete,
         handleAddition: this.handleAddition,
-        handleDrag: this.handleDrag // onChange={this.update('tags')}
-        // update={this.update()}
-
+        handleDrag: this.handleDrag
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "button-holder new-post-form-child"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2654,25 +2503,7 @@ var commentsReducer = function commentsReducer() {
   }
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (commentsReducer); // Sample State Shape
-// {
-//   1: {
-//     title: "walk to store",
-//     done: false
-//   },
-//   2: {
-//     title: "buy soap",
-//     done: false
-//   },
-//   3: {
-//     title: "walk to park",
-//     done: false
-//   },
-//   4: {
-//     title: "play with dog",
-//     done: false
-//   }
-// };
+/* harmony default export */ __webpack_exports__["default"] = (commentsReducer);
 
 /***/ }),
 
@@ -2772,8 +2603,7 @@ var allPosts = function allPosts(_ref) {
   return Object.keys(posts).map(function (id) {
     return posts[id];
   });
-}; // comments is undefined is the problem
-
+};
 var commentsByPostId = function commentsByPostId(_ref2, post_id) {
   var comments = _ref2.comments;
   var commentsByPostId = [];
@@ -2804,7 +2634,6 @@ var _nullSession = {
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullSession;
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  // stop augmenting of state
   Object.freeze(state);
 
   switch (action.type) {
@@ -2815,7 +2644,6 @@ var _nullSession = {
 
     case _actions_session__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullSession;
-    // if neither of these just return the previous state
 
     default:
       return state;
@@ -2839,11 +2667,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var middlewares = [_thunk_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]]; // if (process.env.NODE_ENV !== 'production') {
-//   // must use 'require' (import only allowed at top of file)
-//   const { logger } = require('redux-logger');
-//   middlewares.push(logger);
-// }
+var middlewares = [_thunk_thunk__WEBPACK_IMPORTED_MODULE_2__["default"]];
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
@@ -2904,7 +2728,6 @@ var createComment = function createComment(commentForm) {
     method: 'POST',
     url: "/api/comments",
     data: commentForm,
-    // user: current_user,
     contentType: false,
     processData: false
   });
@@ -2942,7 +2765,6 @@ var createPost = function createPost(postForm) {
     method: 'POST',
     url: 'api/posts',
     data: postForm,
-    // user: current_user,
     contentType: false,
     processData: false
   });

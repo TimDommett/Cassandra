@@ -24,4 +24,3 @@ export default () => (
   </div>
 );
 
-// <Route path="/posts/:post_id/comments" component={CommentListContainer} />

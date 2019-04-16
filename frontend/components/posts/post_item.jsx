@@ -10,9 +10,7 @@ class PostItem extends React.Component {
     super(props);
     this.state = { description: false };
     this.toggleDetail = this.toggleDetail.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this)
-    // this.deletePost = this.deletePost.bind(this)
-    // this.toggleTodo = this.toggleTodo.bind(this);
+
 
 
 
@@ -21,20 +19,12 @@ class PostItem extends React.Component {
   toggleDetail(e) {
     e.preventDefault();
     this.setState({
-      description: !this.state.description,
-      // post_id: this.state.id
-    });
+      description: !this.state.description
+        });
   }
 
 
 
-  // toggleTodo(e) {
-  //   e.preventDefault();
-  //   const toggledTodo = merge({}, this.props.todo, {
-  //      done: !this.props.todo.done
-  //    });
-  //    this.props.updateTodo(toggledTodo);
-  // }
 
 
   render() {
@@ -65,19 +55,5 @@ class PostItem extends React.Component {
 }
 
 
-// const PostItem = ({ post }) => {
-  // let likeButtonText = "You don't like this.";
-  // let likeButtonAction = () => likePost(post.id);
-  // if (post.liked_by_current_user) {
-  //   likeButtonText = "You like this";
-  //   likeButtonAction = () => unLikePost(post.id);
-  // }
-//   return (
-//     <li>
-//       <h3>{post.title}</h3>
-//       <ul>{post.description}</ul>
-//     </li>
-//   );
-// }
 
 export default PostItem;

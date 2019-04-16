@@ -8,7 +8,6 @@ export const createPost = postForm => (
     method: 'POST',
     url: 'api/posts',
     data: postForm,
-    // user: current_user,
     contentType: false,
     processData: false
   })

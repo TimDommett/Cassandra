@@ -14,7 +14,6 @@ class PostIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = { search: "", selectedOption: "title", category: null };
-    // this.state = {search_param: ""}
     this.clearSearch = this.clearSearch.bind(this);
 
   }
@@ -43,9 +42,7 @@ class PostIndex extends React.Component {
     });
   }
 
-  // Need to create dropdown so can change what you are filtering by
 
-  // filtered = posts.map post.categories.include(search)     - both .toLowerCase()     -give suggestions.
 
   render() {
     const { posts, updatePost, deletePost } = this.props;
@@ -59,7 +56,6 @@ class PostIndex extends React.Component {
     else {
 
 
-        // return post.title.toLowerCase().indexOf(search.toLowerCase()) !== -1;
 
         if (post.categories != undefined) {
           return (
@@ -162,7 +158,7 @@ class PostIndex extends React.Component {
               <input type="radio" className="post-search-by" value="Degrees" name="category" class="radio" /> Degrees
               <input type="radio" className="post-search-by" value="Science" name="category" class="radio" /> Science
               <input type="radio" className="post-search-by" value="Coding" name="category" class="radio" /> Coding
-              <input type="radio" className="post-search-by" value="All Categories" name="category" class="radio" /> All Categories
+              <input type="radio" className="post-search-by" value="All Categories" name="" class="radio" /> All Categories
 
 
  

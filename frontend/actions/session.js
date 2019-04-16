@@ -8,11 +8,7 @@ const receiveCurrentUser = user => ({
   user,
 });
 
-// const user = {
-//   id: 1,
-//   username: "",
-//   email: ""
-// }
+
 
 const logoutCurrentUser = () => ({
   type: LOGOUT_CURRENT_USER,

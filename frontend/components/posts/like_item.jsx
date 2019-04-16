@@ -12,7 +12,6 @@ export default ({ post, votePost, unVotePost }) => {
     <li>
       <p><strong className="num-votes">Votes: {post.votes}</strong></p>
       <button className="todo-list-item-child vote-button-one" onClick={voteButtonAction}>{voteButtonText}</button>
-      {/* <button className="todo-list-item-child vote-button" onClick={voteButtonAction}></button> */}
       <div className="todo-list-item-child vote-button" onClick={voteButtonAction}>
         <img className="rocket-button vert-move" src="https://image.flaticon.com/icons/svg/1705/1705667.svg" />
       </div>
