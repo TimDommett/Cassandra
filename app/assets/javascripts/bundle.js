@@ -880,7 +880,7 @@ function (_React$Component) {
         className: "hero-img-frame"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "hero-img",
-        src: "https://gdurl.com/qmie"
+        src: "https://gdurl.com/8OBs"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "home-copy-title"
       }, "Created as a testament to the power of free education."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
