@@ -1,4 +1,4 @@
-Cassandra attempts to give more equal access to information and educational recourses for all. (essentially an online educational recourses hub).
+Cassandra attempts to give more equal access to information and educational recourses for everyone. (essentially an online educational recourses hub).
 
 
 **Major Features:**
